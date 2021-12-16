@@ -5,7 +5,7 @@ brew update
 brew install yadm
 yadm clone https://github.com/archlemon/dotfiles
 brew install $(cat ~/.brewapps)
-brew cask install $(cat ~/.brewcask)
+brew install --cask $(cat ~/.brewcask)
 git clone https://github.com/powerline/fonts.git --depth=1 ~/.fonts
 ~/.fonts/install.sh
 rm -rf ~/.fonts
