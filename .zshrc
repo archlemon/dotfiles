@@ -77,7 +77,7 @@ plugins=(
   dotenv
   encode64
   git
-  osx
+  macos
   ssh-agent
   tmux
   zsh-autosuggestions
