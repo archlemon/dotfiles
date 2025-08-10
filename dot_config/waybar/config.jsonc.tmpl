@@ -16,6 +16,10 @@
         "memory",
         "temperature",
         "pulseaudio",
+        {{ if eq .chezmoi.hostname "matt-z13" }}
+        "backlight",
+        "battery",
+        {{ end }}
         "tray",
         "custom/lock",
         "custom/power"
@@ -31,11 +35,13 @@
         //     "default": "",
         // },
         "on-scroll-up": "hyprctl dispatch workspace e-1",
-        "on-scroll-down": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1"
      },
     "tray": {
         "icon-size": 21,
-        "spacing": 10
+        "spacing": 5,
+        "show-if-empty": false,
+        "show-passive-items": false,
     },
     "custom/music": {
         "format": " {}",
@@ -51,11 +57,26 @@
         "format": "{:%a %d %B %H:%M}"
     },
     "backlight": {
+        {{ if eq .chezmoi.hostname "matt-z13" }}
+        "device": "amdgpu_bl1",
+        "on-click": "brightnessctl -d amdgpu_bl1 set 100%",
+        "on-click-middle": "brightnessctl -d amdgpu_bl1 set 50%",
+        "on-click-right": "brightnessctl -d amdgpu_bl1 set 0%",
+        {{ else }}
         "device": "intel_backlight",
+        "on-click": "brightnessctl -d intel_backlight set 100%",
+        "on-click-middle": "brightnessctl -d intel_backlight set 50%",
+        "on-click-right": "brightnessctl -d intel_backlight set 0%",
+        {{ end }}
         "format": "{icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "tooltip": true,
+        "tooltip-format": "{percent}%",
+        "scroll-step": 5,
     },
     "battery": {
+        "bat": "BAT0",
+        "adaptor": "AC0",
         "states": {
             "warning": 30,
             "critical": 15
@@ -64,7 +85,7 @@
         "format-charging": "󱐋",
         "format-plugged": "",
         "format-alt": "{icon}",
-        "format-icons": ["", "", "", "", ""],
+        "format-icons": ["", "", "", "", ""]
     },
     "cpu": {
         "format": " {usage}%",
