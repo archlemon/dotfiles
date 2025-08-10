@@ -8,10 +8,12 @@ docker
 docker-compose
 easyeffects
 flatpak
+gnome-themes-extra
 go
 godot
 nerd-fonts
 nodejs
+nwg-look
 php-cs-fixer
 phpactor
 prettierd
