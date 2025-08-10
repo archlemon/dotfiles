@@ -26,6 +26,8 @@ sushi
 vilkan-radeon
 vilkan-tools
 wlrobs
+xdg-desktop-portal
+xdg-desktop-portal-hyprland
 xwaylandvideobridge
 zsh
 zsh-autosuggestions
