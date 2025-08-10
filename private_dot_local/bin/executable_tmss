@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Script to list non-numeric tmux sessions and switch to one using fzf
+
+# Ensure tmux is running
+if ! pgrep tmux > /dev/null; then
+    echo "No tmux sessions found."
+    exit 0
+fi
+
+# Get list of non-numeric session names
+sessions=$(tmux list-sessions -F "#{session_name}" | grep -vE '^[0-9]+$')
+
+# Exit if there are no non-numeric sessions
+if [[ -z "$sessions" ]]; then
+    tmux display-message "No named tmux sessions available."
+    exit 0
+fi
+
+# Use fzf to select a session
+selected=$(echo "$sessions" | fzf)
+
+# Exit if nothing selected
+if [[ -z "$selected" ]]; then
+    exit 0
+fi
+
+# Switch to the selected session
+tmux switch-client -t "$selected"
+

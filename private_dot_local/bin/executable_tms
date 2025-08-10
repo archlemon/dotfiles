@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+# https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/scripts/tmux-sessionizer
+
+# if [[ $# -eq 1 ]]; then
+#     selected=$1
+# else
+#     selected=$(find /work /personal /godot -mindepth 0 -maxdepth 1 -type d | fzf)
+# fi
+#
+# if [[ -z $selected ]]; then
+#     exit 0
+# fi
+#
+# selected_name=$(basename "$selected" | tr . _)
+# tmux_running=$(pgrep tmux)
+#
+# if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+#     tmux new-session -s $selected_name -c $selected
+#     exit 0
+# fi
+#
+# if ! tmux has-session -t=$selected_name 2> /dev/null; then
+#     tmux new-session -ds $selected_name -c $selected
+# fi
+#
+# tmux switch-client -t $selected_name
+
+###
+
+# Let user pick a directory if not provided as an argument
+if [[ $# -eq 1 ]]; then
+    selected="$1"
+else
+    selected=$(find /work /personal /godot -mindepth 0 -maxdepth 1 -type d 2>/dev/null | fzf)
+fi
+
+# Exit if nothing was selected
+if [[ -z "$selected" ]]; then
+    exit 0
+fi
+
+# Use the base directory name for the tmux session name
+selected_name=$(basename "$selected" | tr . _)
+
+# Check if tmux is running
+tmux_running=$(pgrep tmux)
+
+# If tmux is not running and we're not inside a tmux session, start a new one
+if [[ -z "$TMUX" ]] && [[ -z "$tmux_running" ]]; then
+    exec tmux new-session -s "$selected_name" -c "$selected"
+fi
+
+# Create the session if it doesn't exist
+if ! tmux has-session -t="$selected_name" 2>/dev/null; then
+    tmux new-session -ds "$selected_name" -c "$selected"
+fi
+
+# Switch to the session
+tmux switch-client -t "$selected_name"

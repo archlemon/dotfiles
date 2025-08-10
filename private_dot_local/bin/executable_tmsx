@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Kill all non-attached tmux sessions with numeric names
+
+# Find numeric, detached sessions
+numeric_sessions=$(tmux list-sessions -F "#{session_name}:#{session_attached}" | \
+    awk -F: '$1 ~ /^[0-9]+$/ && $2 == 0 { print $1 }')
+
+# Kill each matching session
+if [[ -n "$numeric_sessions" ]]; then
+    while read -r session; do
+        tmux kill-session -t "$session" 2>/dev/null
+    done <<< "$numeric_sessions"
+    tmux display-message "Cleaned up numeric sessions."
+else
+    tmux display-message "No numeric sessions to clean up."
+fi
+
