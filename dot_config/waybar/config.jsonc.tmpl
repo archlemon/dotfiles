@@ -1,10 +1,12 @@
 {
+    {{ if eq .chezmoi.hostname "matt-b650iax" }}
     "output": "DP-2",
+    {{ end }}
     "layer": "top",
     "position": "top",
     "modules-left": [
         "hyprland/workspaces",
-        "custom/music",
+        "custom/music"
     ],
     "modules-center": [
         "clock"
@@ -40,7 +42,7 @@
         "escape": true,
         "interval": 5,
         "tooltip": false,
-        "exec": "playerctl metadata --format='{{ title }}'",
+        "exec": "playerctl metadata --format='{{ "{{" }} title {{ "}}" }}'",
         "on-click": "playerctl play-pause",
         "max-length": 50
     },

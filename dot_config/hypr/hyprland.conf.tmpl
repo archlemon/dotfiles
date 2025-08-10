@@ -399,9 +399,9 @@ workspace = 0, monitor:DP-2
 env = GDK_SCALE,1.25
 {{ else }}
 {{ range $i := until 9 -}}
-workspace = {{ add $i 1 }}, persistent:true
+workspace = {{ add $i 1 }}
 {{ end -}}
-workspace = 0, persistent:true
+workspace = 0
 {{ end }}
 
 # try hide xwaylandvideobridge dummy window
