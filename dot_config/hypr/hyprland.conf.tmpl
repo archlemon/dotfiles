@@ -75,6 +75,9 @@ exec-once = xwaylandvideobridge
 exec-once = waybar
 exec-once = hyprctl setcursor Bibata-Modern-Classic 24
 
+exec-once = xsettingsd &
+exec-once = gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
 {{ if eq .chezmoi.hostname "matt-b650iax" }}
 exec-once = [workspace 1 silent] $terminal tmux new
 exec-once = [workspace 1 silent] $vpn

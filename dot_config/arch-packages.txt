@@ -30,6 +30,7 @@ vilkan-tools
 wlrobs
 xdg-desktop-portal
 xdg-desktop-portal-hyprland
+xsettingsd
 xwaylandvideobridge
 zsh
 zsh-autosuggestions
