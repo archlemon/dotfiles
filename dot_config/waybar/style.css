@@ -1,0 +1,127 @@
+@import "mocha.css";
+
+* {
+	font-family: Hack Nerd Font Propo;
+	font-size: 16px;
+	min-height: 0;
+}
+
+#waybar {
+	background: transparent;
+	color: @text;
+	margin: 0px;
+	padding: 0px;
+}
+
+#workspaces {
+	border-radius: 1rem;
+	background-color: @surface0;
+}
+
+#workspaces button {
+	all: unset;
+	color: @lavender;
+	padding: 0.5rem 1rem;
+}
+
+#workspaces button.active {
+	color: @sky;
+}
+
+#workspaces button:hover,
+#workspaces button:active,
+#workspaces button:focused {
+	background: none;
+	box-shadow: none;
+}
+
+#custom-music,
+#tray,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#cpu,
+#memory,
+#temperature,
+#custom-lock,
+#custom-power {
+	background-color: @surface0;
+	padding: 0.5rem 1rem;
+	/* margin: 5px 0; */
+	/* margin: 0px 1rem ; */
+	border-radius: 1rem;
+	margin-left: 0.5rem;
+}
+
+#clock {
+	color: @blue;
+}
+
+#battery {
+	color: @green;
+}
+
+#battery.charging {
+	color: @green;
+}
+
+#battery.warning:not(.charging) {
+	color: @red;
+}
+
+#backlight {
+	color: @yellow;
+}
+
+#backlight, #battery {
+	border-radius: 0;
+}
+
+#pulseaudio {
+	color: @maroon;
+}
+
+#custom-music {
+	color: @mauve;
+}
+
+#custom-lock {
+	border-radius: 1rem 0px 0px 1rem;
+	margin-right: 0;
+	padding-right: 0;
+	color: @lavender;
+}
+
+#custom-power {
+	border-radius: 0px 1rem 1rem 0px;
+	margin-left: 0;
+	padding-left: 1rem;
+	color: @red;
+}
+
+#tray {
+	/* margin-right: 1rem; */
+	/* border-radius: 1rem; */
+}
+
+#cpu {
+	color: @green;
+}
+
+#memory {
+	color: @teal;
+}
+
+#temperature {
+	color: @peach;
+}
+
+#temperature.critical {
+	color: @red;
+	font-weight: bold;
+}
+
+.modules-left, .modules-right {
+	margin: 0px 0.5rem;
+}

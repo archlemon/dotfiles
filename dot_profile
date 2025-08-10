@@ -1,0 +1,6 @@
+. "$HOME/.cargo/env"
+export PATH=~/.npm-global/bin:$PATH
+export PATH=~/.local/bin:$PATH
+alias l=lvim
+alias v=vim
+alias n=nvim

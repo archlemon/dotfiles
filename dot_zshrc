@@ -1,0 +1,48 @@
+# export GPG_TTY=$(tty)
+
+source $HOME/.profile
+
+export CLICOLOR=1
+# export TERM=xterm-256color
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
+export ZSH_DOTENV_PROMPT=false
+
+export ZSH="$HOME/.oh-my-zsh"
+
+export PATH="$HOME/go/bin:$HOME/.local/bin:$PATH"
+
+# Set TERM only inside tmux
+if [[ -n "$TMUX" ]]; then
+  export TERM="screen-256color"
+else
+  export TERM="xterm-kitty"
+fi
+
+ZSH_THEME="agnoster"
+
+plugins=(
+  docker
+  docker-compose
+  dotenv
+  git
+  git-lfs
+  npm
+  postgres
+  redis-cli
+  ssh-agent
+  tmux
+  yarn
+  zsh-autosuggestions
+)
+
+source $ZSH/oh-my-zsh.sh
+
+prompt_context() {}
+
+DISABLE_UPDATE_PROMPT=true
+
+# stop ctrl-d from exiting
+setopt IGNORE_EOF
+
+KEYTIMEOUT=1
+. "$HOME/.cargo/env"
