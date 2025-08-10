@@ -1,6 +1,7 @@
 bibata-cursor-theme
 bluetui
 brave-bin
+brightnessctl
 btop
 chezmoi
 composer
