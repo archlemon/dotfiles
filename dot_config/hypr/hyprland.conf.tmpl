@@ -23,7 +23,7 @@ source = ~/.config/hypr/mocha.conf
 ################
 
 # See https://wiki.hyprland.org/Configuring/Monitors/
-monitor = ,preferred,auto,auto
+monitor = ,preferred,auto,1.6
 
 {{ if eq .chezmoi.hostname "matt-b650iax" }}
 # divide desired position by 1.25 due to display scaling
@@ -382,10 +382,11 @@ windowrule = suppressevent maximize, class:.*
 # Fix some dragging issues with XWayland
 windowrule = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0
 
-{{ if eq .chezmoi.hostname "matt-b650iax" }}
 xwayland {
     force_zero_scaling = true
 }
+
+{{ if eq .chezmoi.hostname "matt-b650iax" }}
 workspace = 1, monitor:HDMI-A-1
 workspace = 2, monitor:DP-2
 workspace = 3, monitor:DP-2
@@ -398,6 +399,7 @@ workspace = 9, monitor:DP-2
 workspace = 0, monitor:DP-2
 env = GDK_SCALE,1.25
 {{ else }}
+env = GDK_SCALE,1.6
 {{ range $i := until 9 -}}
 workspace = {{ add $i 1 }}
 {{ end -}}
