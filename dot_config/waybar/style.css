@@ -48,7 +48,8 @@
 #network,
 #custom-vpn,
 #custom-lock,
-#custom-power {
+#custom-power,
+#custom-mouse-accel {
 	background-color: @surface0;
 	padding: 0.5rem 1rem;
 	border-radius: 1rem;
@@ -155,6 +156,18 @@
 
 #custom-vpn {
 	color: @white;
+}
+
+#custom-mouse-accel {
+	color: @red;
+}
+
+#custom-mouse-accel.on {
+	color: @green;
+}
+
+#custom-mouse-accel.off {
+	color: @blue;
 }
 
 .modules-left, .modules-right {

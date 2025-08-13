@@ -20,6 +20,7 @@
         "backlight",
         "battery",
         {{ end }}
+        "custom/mouse-accel",
         "tray",
         "bluetooth",
         "custom/vpn",
@@ -158,5 +159,13 @@
         "interval": 5,
         "tooltip": true,
         "tooltip-format": "VPN enabled",
+    },
+    "custom/mouse-accel": {
+        "exec": "~/.config/waybar/scripts/mouse-accel.sh",
+        "return-type": "json",
+        "interval": 30,
+        "signal": 10,
+        "on-click": "~/.config/waybar/scripts/mouse-accel.sh toggle",
+        "tooltip": true
     }
 }
