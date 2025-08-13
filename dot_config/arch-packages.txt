@@ -12,6 +12,7 @@ flatpak
 gnome-themes-extra
 go
 godot
+lf-git
 nerd-fonts
 nodejs
 nwg-look
