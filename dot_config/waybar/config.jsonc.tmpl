@@ -21,7 +21,8 @@
         "battery",
         {{ end }}
         "tray",
-        "custom/power"
+        "bluetooth",
+        "network",
     ],
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -68,7 +69,7 @@
         "on-click-right": "brightnessctl -d intel_backlight set 0%",
         {{ end }}
         "format": "{icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "],
         "tooltip": true,
         "tooltip-format": "{percent}%",
         "scroll-step": 5,
@@ -84,7 +85,7 @@
         "format-charging": "󱐋",
         "format-plugged": "",
         "format-alt": "{icon}",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [" ", " ", " ", " ", " "]
     },
     "cpu": {
         "format": " {usage}%",
@@ -113,14 +114,31 @@
         "format": "{icon}{volume}%",
         "format-muted": "",
         "format-icons": {
-            "default": ["", "", " "]
+            "default": [" ", " ", " "]
         },
         "on-click": "pavucontrol"
+    },
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "󰈀",
+        "format-linked": "󰲊",
+        "format-disconnected": "󰌙",
+        "format-network-disabled": "󰲜",
+        "format-alt": "{ipaddr}/{cidr}",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    },
+    "bluetooth": {
+        "format": "󰂯",
+        "format-disabled": "󰂯",
+        "format-connected": "",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
     },
     "custom/lock": {
         "tooltip": false,
         "on-click": "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown",
-        "format": "",
+        "format": " ",
     },
     "custom/power": {
         "tooltip": false,

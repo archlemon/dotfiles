@@ -44,6 +44,8 @@
 #cpu,
 #memory,
 #temperature,
+#bluetooth,
+#network,
 #custom-lock,
 #custom-power {
 	background-color: @surface0;
@@ -126,6 +128,46 @@
 	font-weight: bold;
 }
 
+#bluetooth {
+	color: @blue;
+}
+
+#bluetooth.discovering {
+	color: @green;
+}
+
+#bluetooth.disabled, #bluetooth.off, #bluetooth.no-controller {
+	color: @red;
+}
+
+#network {
+	color: @blue;
+}
+
+#network.disabled, #network.disconnected {
+	color: @red;
+}
+
+#network.linked {
+	color: @yellow;
+}
+
 .modules-left, .modules-right {
 	margin: 0px 0.5rem;
+}
+
+/* start group */
+#bluetooth {
+	border-radius: 1rem 0 0 1rem;
+	margin-right: 0;
+	padding: 0.5rem;
+	padding-left: 1rem;
+}
+
+/* end group */
+#network {
+	border-radius: 0 1rem 1rem 0;
+	margin-left: 0;
+	padding: 0.5rem;
+	padding-right: 1rem;
 }
