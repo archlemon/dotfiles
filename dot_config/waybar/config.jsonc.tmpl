@@ -22,6 +22,7 @@
         {{ end }}
         "tray",
         "bluetooth",
+        "custom/vpn",
         "network",
     ],
     "hyprland/workspaces": {
@@ -124,8 +125,12 @@
         "format-linked": "󰲊",
         "format-disconnected": "󰌙",
         "format-network-disabled": "󰲜",
-        "format-alt": "{ipaddr}/{cidr}",
+        //"format-alt": "{ipaddr}/{cidr}",
         "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
     },
     "bluetooth": {
         "format": "󰂯",
@@ -144,5 +149,14 @@
         "tooltip": false,
         "on-click": "hyprctl dispatch exit",
         "format": "⏻"
+    },
+    "custom/vpn": {
+        "format": "",
+        "exec": "echo '{\"class\": \"connected\"}'",
+        "exec-if": "test -d /proc/sys/net/ipv4/conf/tun0",
+        "return-type": "json",
+        "interval": 5,
+        "tooltip": true,
+        "tooltip-format": "VPN enabled",
     }
 }

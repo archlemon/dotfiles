@@ -46,6 +46,7 @@
 #temperature,
 #bluetooth,
 #network,
+#custom-vpn,
 #custom-lock,
 #custom-power {
 	background-color: @surface0;
@@ -152,6 +153,10 @@
 	color: @yellow;
 }
 
+#custom-vpn {
+	color: @blue;
+}
+
 .modules-left, .modules-right {
 	margin: 0px 0.5rem;
 }
@@ -162,6 +167,13 @@
 	margin-right: 0;
 	padding: 0.5rem;
 	padding-left: 1rem;
+}
+
+/* middle group */
+#custom-vpn {
+	border-radius: 0;
+	margin-left: 0;
+	padding: 0.5rem;
 }
 
 /* end group */
