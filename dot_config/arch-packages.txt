@@ -28,6 +28,7 @@ sublime-text
 sushi
 vilkan-radeon
 vilkan-tools
+vim
 wlrobs
 xdg-desktop-portal
 xdg-desktop-portal-gnome
