@@ -410,8 +410,10 @@ workspace = 8, monitor:DP-2
 workspace = 9, monitor:DP-2
 workspace = 0, monitor:DP-2
 env = GDK_SCALE,1.25
+env = GDK_DPI_SCALE,0.8
 {{ else }}
 env = GDK_SCALE,1.6
+env = GDK_DPI_SCALE,0.625
 {{ range $i := until 9 -}}
 workspace = {{ add $i 1 }}
 {{ end -}}
