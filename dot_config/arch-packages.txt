@@ -11,7 +11,10 @@ easyeffects
 flatpak
 gnome-themes-extra
 go
+go-yq
 godot
+hyprshot
+jq
 lf-git
 nerd-fonts
 nodejs
