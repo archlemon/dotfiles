@@ -113,13 +113,14 @@
         "interval": 2,
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
+        "scroll-step": 5, // %, can be a float
         "format": "{icon}{volume}%",
         "format-muted": "",
         "format-icons": {
             "default": [" ", " ", " "]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     },
     "network": {
         "format-wifi": "",
