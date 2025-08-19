@@ -13,9 +13,11 @@ gnome-themes-extra
 go
 go-yq
 godot
+hyprcap
 hyprshot
 jq
 lf-git
+mako
 nerd-fonts
 nodejs
 nwg-look
