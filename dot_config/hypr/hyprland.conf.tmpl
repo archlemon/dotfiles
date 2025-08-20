@@ -310,6 +310,7 @@ bind = $mainMod, F, fullscreen
 bind = $mainMod, N, exec, $terminal nn
 bind = $mainMod, U, exec, $spotify
 bind = $mainMod, PRINT, exec, hyprshot -m output
+bind = $mainMod SHIFT, PRINT, exec, hyprshot -m region
 bind = $mainMod ALT, PRINT, exec, hyprshot -m window
 bind = $mainMod, S, exec, hyprcap -vv rec monitor:active -w -o ~/Videos/Captures -f capture_$(date +%F_%H-%M-%S).mp4
 bind = $mainMod SHIFT, S, exec, hyprcap -vv rec region -w -o ~/Videos/Captures -f capture_$(date +%F_%H-%M-%S).mp4
