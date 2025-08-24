@@ -1,3 +1,4 @@
+bc
 bibata-cursor-theme
 bluetui
 brave-bin

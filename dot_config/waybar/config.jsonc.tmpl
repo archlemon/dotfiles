@@ -14,7 +14,8 @@
     "modules-right": [
         "cpu",
         "memory",
-        "temperature",
+        //"temperature",
+        "custom/temp",
         "pulseaudio",
         {{ if eq .chezmoi.hostname "matt-z13" }}
         "backlight",
@@ -111,6 +112,18 @@
         "format": "{icon} {temperatureC}°C",
         "format-icons": ["", "", "", "", ""],
         "interval": 2,
+    },
+    "custom/temp": {
+        "exec": "~/.config/waybar/scripts/temps.sh",
+        "return-type": "json",
+        "format-icons": ["", "", "", "", ""],
+        "interval": 2,
+        "tooltip": true,
+        "format": "{icon} {text}",
+        "format-icons": ["", "", "", "", ""],
+        "states": {
+            "critical": 80
+        }
     },
     "pulseaudio": {
         "scroll-step": 5, // %, can be a float

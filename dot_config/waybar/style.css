@@ -44,6 +44,7 @@
 #cpu,
 #memory,
 #temperature,
+#custom-temp,
 #bluetooth,
 #network,
 #custom-vpn,
@@ -53,7 +54,7 @@
 	background-color: @surface0;
 	padding: 0.5rem 1rem;
 	border-radius: 1rem;
-	margin-left: 0.5rem;
+	margin-left: 0.25rem;
 }
 
 #clock {
@@ -121,7 +122,7 @@
 	color: @teal;
 }
 
-#temperature {
+#temperature, #custom-temp {
 	color: @peach;
 }
 
