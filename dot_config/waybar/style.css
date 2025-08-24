@@ -126,7 +126,7 @@
 	color: @peach;
 }
 
-#temperature.critical {
+#temperature.critical, #custom-temp.critical {
 	color: @red;
 	font-weight: bold;
 }
