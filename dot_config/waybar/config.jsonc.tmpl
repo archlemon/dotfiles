@@ -25,7 +25,8 @@
         "tray",
         "bluetooth",
         "custom/vpn",
-        "network",
+        "network#wifi",
+        "network#wired",
     ],
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -135,18 +136,27 @@
         "on-click": "pavucontrol",
         "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     },
-    "network": {
+    "network#wifi": {
+        "interface": "wl*",
         "format-wifi": "",
-        "format-ethernet": "󰈀",
         "format-linked": "󰲊",
-        "format-disconnected": "󰌙",
-        "format-network-disabled": "󰲜",
-        //"format-alt": "{ipaddr}/{cidr}",
+        "format-disconnected": "",
+        "format-network-disabled": "",
         "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
         "tooltip-format": "{ifname} via {gwaddr} 󰊗",
         "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
         "tooltip-format-ethernet": "{ifname} ",
-        "tooltip-format-disconnected": "Disconnected",
+        "tooltip-format-disconnected": "Disconnected"
+    },
+    "network#wired": {
+        "interface": "en*",
+        "format-ethernet": "󰈀",
+        "format-linked": "󰲊",
+        "format-disconnected": "",
+        "format-network-disabled": "",
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected"
     },
     "bluetooth": {
         "format": "󰂯",
