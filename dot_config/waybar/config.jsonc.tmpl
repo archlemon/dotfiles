@@ -138,10 +138,12 @@
     },
     "network#wifi": {
         "interface": "wl*",
-        "format-wifi": "",
-        "format-linked": "󰲊",
+        "format": "",
         "format-disconnected": "",
+        "format-ethernet": "",
+        "format-linked": "󰲊",
         "format-network-disabled": "",
+        "format-wifi": "",
         "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
         "tooltip-format": "{ifname} via {gwaddr} 󰊗",
         "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
@@ -150,10 +152,12 @@
     },
     "network#wired": {
         "interface": "en*",
+        "format": "",
+        "format-disconnected": "",
         "format-ethernet": "󰈀",
         "format-linked": "󰲊",
-        "format-disconnected": "",
         "format-network-disabled": "",
+        "format-wifi": "",
         "tooltip-format": "{ifname} via {gwaddr} 󰊗",
         "tooltip-format-ethernet": "{ifname} ",
         "tooltip-format-disconnected": "Disconnected"
