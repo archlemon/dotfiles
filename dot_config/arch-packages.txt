@@ -40,6 +40,7 @@ sushi
 vilkan-radeon
 vilkan-tools
 vim
+waybar
 wlrobs
 xdg-desktop-portal
 xdg-desktop-portal-gnome

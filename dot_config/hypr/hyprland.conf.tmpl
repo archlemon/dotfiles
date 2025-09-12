@@ -54,6 +54,31 @@ $slack = flatpak run com.slack.Slack --enable-features=UseOzonePlatform --ozone-
 $spotify = flatpak run com.spotify.Client
 
 
+#############################
+### ENVIRONMENT VARIABLES ###
+#############################
+
+# See https://wiki.hyprland.org/Configuring/Environment-variables/
+
+# screenshare
+env = XDG_SESSION_TYPE,wayland
+env = XDG_SESSION_DESKTOP,Hyprland
+env = XDG_CURRENT_DESKTOP,Hyprland
+
+# qt theming
+env = QT_QPA_PLATFORM,wayland
+env = QT_QPA_PLATFORMTHEME,qt5ct
+
+# electron
+env = ELECTRON_OZONE_PLATFORM_HINT,wayland
+
+env = XCURSOR_SIZE,24
+env = HYPRCURSOR_SIZE,24
+
+env = GTK_TOOLTIP_TIMEOUT,0
+env = GTK_NATIVE_TOOLTIPS,0
+
+
 #################
 ### AUTOSTART ###
 #################
@@ -87,29 +112,6 @@ exec-once = [workspace 6 silent] $terminal tmux new
 {{ else }}
 exec-once = [workspace 1 silent] $vpn
 {{ end }}
-
-
-
-#############################
-### ENVIRONMENT VARIABLES ###
-#############################
-
-# See https://wiki.hyprland.org/Configuring/Environment-variables/
-
-# screenshare
-env = XDG_SESSION_TYPE,wayland
-env = XDG_SESSION_DESKTOP,Hyprland
-env = XDG_CURRENT_DESKTOP,Hyprland
-
-# qt theming
-env = QT_QPA_PLATFORM,wayland
-env = QT_QPA_PLATFORMTHEME,qt5ct
-
-# electron
-env = ELECTRON_OZONE_PLATFORM_HINT,wayland
-
-env = XCURSOR_SIZE,24
-env = HYPRCURSOR_SIZE,24
 
 
 ###################
@@ -176,7 +178,7 @@ decoration {
 
     # https://wiki.hyprland.org/Configuring/Variables/#blur
     blur {
-        enabled = true
+        enabled = false
         size = 3
         passes = 1
 
@@ -433,3 +435,8 @@ windowrule = noinitialfocus, class:^(xwaylandvideobridge)$
 windowrule = maxsize 1 1, class:^(xwaylandvideobridge)$
 windowrule = noblur, class:^(xwaylandvideobridge)$
 windowrule = nofocus, class:^(xwaylandvideobridge)$
+
+# waybar tooltip fixes
+layerrule = noanim, waybar
+layerrule = noanim, ^gtk-layer-shell$
+layerrule = ignorealpha, waybar
