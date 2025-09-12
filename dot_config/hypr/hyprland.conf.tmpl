@@ -265,10 +265,14 @@ input {
 }
 
 # https://wiki.hyprland.org/Configuring/Variables/#gestures
+# https://wiki.hypr.land/Configuring/Gestures/
 gestures {
-    workspace_swipe = true
-    workspace_swipe_fingers = 4
     workspace_swipe_invert = false
+    workspace_swipe_distance = 150
+    workspace_swipe_touch = true
+
+    gesture = 4, horizontal, workspace
+    gesture = 4, up, fullscreen
 }
 
 # Example per-device config
