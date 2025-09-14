@@ -176,7 +176,7 @@
 }
 
 /* start group */
-#bluetooth {
+#bluetooth, #cpu {
 	border-radius: 1rem 0 0 1rem;
 	margin-right: 0;
 	padding: 0.5rem 0.25rem;
@@ -184,14 +184,18 @@
 }
 
 /* middle group */
-#custom-vpn {
+#custom-vpn, #memory, #custom-temp {
 	border-radius: 0;
 	margin-left: 0;
 	padding: 0.5rem 0.25rem;
 }
 
+#memory, #custom-temp {
+	padding: 0.5rem;
+}
+
 /* end group */
-#network {
+#network, #pulseaudio {
 	border-radius: 0 1rem 1rem 0;
 	margin-left: 0;
 	padding: 0.5rem 0.25rem;
