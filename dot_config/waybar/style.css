@@ -190,8 +190,14 @@
 	padding: 0.5rem 0.25rem;
 }
 
-#memory, #custom-temp {
-	padding: 0.5rem;
+#memory {
+	padding-left: 0.75rem;
+	padding-right: 0.5rem;
+}
+
+#custom-temp {
+	padding-left: 0.5rem;
+	padding-right: 0.75rem;
 }
 
 /* end group */
