@@ -176,7 +176,7 @@
 }
 
 /* start group */
-#bluetooth, #cpu {
+#bluetooth, #cpu, #custom-mouse-accel {
 	border-radius: 1rem 0 0 1rem;
 	margin-right: 0;
 	padding: 0.5rem 0.25rem;
@@ -195,7 +195,7 @@
 }
 
 /* end group */
-#network, #pulseaudio {
+#network, #pulseaudio, #custom-power {
 	border-radius: 0 1rem 1rem 0;
 	margin-left: 0;
 	padding: 0.5rem 0.25rem;
