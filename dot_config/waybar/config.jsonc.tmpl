@@ -27,6 +27,7 @@
         "custom/vpn",
         "network#wifi",
         "network#wired",
+        "custom/power",
     ],
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -128,10 +129,10 @@
     },
     "pulseaudio": {
         "scroll-step": 5, // %, can be a float
-        "format": "{icon}{volume}%",
+        "format": "{icon} {volume}%",
         "format-muted": "",
         "format-icons": {
-            "default": [" ", " ", " "]
+            "default": ["", "", ""]
         },
         "on-click": "pavucontrol",
         "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
@@ -173,15 +174,23 @@
     "custom/lock": {
         "tooltip": false,
         "on-click": "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown",
-        "format": " ",
+        "format": "",
     },
     "custom/power": {
+        "format" : "⏻",
         "tooltip": false,
-        "on-click": "hyprctl dispatch exit",
-        "format": "⏻"
+        "menu": "on-click",
+        "menu-file": "~/.config/waybar/power_menu.xml",
+        "menu-actions": {
+            "shutdown": "shutdown",
+            "reboot": "reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate",
+            "exit": "hyprctl dispatch exit",
+        },
     },
     "custom/vpn": {
-        "format": "",
+        "format": "",
         "exec": "echo '{\"class\": \"connected\"}'",
         "exec-if": "test -d /proc/sys/net/ipv4/conf/tun0",
         "return-type": "json",

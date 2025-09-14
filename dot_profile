@@ -4,3 +4,10 @@ export PATH=~/.local/bin:$PATH
 alias l=lvim
 alias v=vim
 alias n=nvim
+alias suspend="systemctl suspend"
+alias hexit="hyprctl dispatch exit"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/matt/.lmstudio/bin"
+# End of LM Studio CLI section
+
