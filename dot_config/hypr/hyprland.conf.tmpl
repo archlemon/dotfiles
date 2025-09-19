@@ -104,13 +104,10 @@ exec-once = hyprctl keyword "input:accel_profile" "adaptive"
 exec-once = xsettingsd &
 exec-once = gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
+exec-once = [workspace 1 silent] $vpn
+
 {{ if eq .chezmoi.hostname "matt-b650iax" }}
-exec-once = [workspace 1 silent] $terminal tmux new
-exec-once = [workspace 1 silent] $vpn
-exec-once = [workspace 2 silent] $browser
-exec-once = [workspace 6 silent] $terminal tmux new
 {{ else }}
-exec-once = [workspace 1 silent] $vpn
 {{ end }}
 
 
