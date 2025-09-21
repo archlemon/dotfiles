@@ -28,6 +28,7 @@ nodejs
 nwg-look
 php-cs-fixer
 phpactor
+postgresql-libs
 prettierd
 qbittorrent
 qt5-wayland
