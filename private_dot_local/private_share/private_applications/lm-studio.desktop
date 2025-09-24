@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=LM Studio
+Exec=/home/matt/Applications/LM-Studio.AppImage
+Type=Application
+Terminal=false
