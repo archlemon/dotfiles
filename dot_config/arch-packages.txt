@@ -46,6 +46,7 @@ vilkan-tools
 vim
 waybar
 wlrobs
+wofi
 xdg-desktop-portal
 xdg-desktop-portal-gnome
 xdg-desktop-portal-hyprland
