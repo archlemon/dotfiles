@@ -41,6 +41,7 @@ qt5ct
 qt6ct
 repomix
 rustup
+snapshot
 spotify-player
 sublime-text
 sushi
