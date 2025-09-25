@@ -24,8 +24,10 @@ gtk3
 hyprcap
 hyprshot
 jq
+kitty
 lf-git
 mako
+neovim
 nerd-fonts
 nodejs
 nwg-look
@@ -41,11 +43,13 @@ rustup
 spotify-player
 sublime-text
 sushi
+tmux
 vilkan-radeon
 vilkan-tools
 vim
 waybar
 wlrobs
+wofi
 xdg-desktop-portal
 xdg-desktop-portal-gnome
 xdg-desktop-portal-hyprland
