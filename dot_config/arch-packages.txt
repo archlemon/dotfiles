@@ -44,8 +44,9 @@ spotify-player
 sublime-text
 sushi
 tmux
-vilkan-radeon
-vilkan-tools
+vulkan-radeon
+vulkan-tools
+vulkan-headers
 vim
 waybar
 wlrobs
