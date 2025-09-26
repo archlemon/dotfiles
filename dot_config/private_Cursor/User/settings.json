@@ -2,7 +2,6 @@
   "window.commandCenter": true,
   "window.zoomLevel": 1.25,
   "editor.wordWrap": "on",
-  "workbench.colorTheme": "Catppuccin Mocha",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "<leader>"],
@@ -85,5 +84,6 @@
   "workbench.editor.showTabs": "single",
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
-  }
+  },
+  "workbench.colorTheme": "Catppuccin Mocha"
 }
