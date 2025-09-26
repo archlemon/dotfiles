@@ -10,6 +10,7 @@ docker
 docker-compose
 easyeffects
 flatpak
+gnome-disk-utility
 gnome-themes-extra
 go
 go-yq
