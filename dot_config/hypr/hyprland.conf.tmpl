@@ -112,6 +112,8 @@ exec-once = hyprctl keyword "input:accel_profile" "adaptive"
 exec-once = xsettingsd &
 exec-once = gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
+exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
 exec-once = [workspace 1 silent] $vpn
 
 {{ if has .chezmoi.hostname (list "matt-b650iax" "framework") }}
