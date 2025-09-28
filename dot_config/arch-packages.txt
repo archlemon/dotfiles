@@ -63,3 +63,4 @@ xsettingsd
 xwaylandvideobridge
 zsh
 zsh-autosuggestions
+zsh-syntax-highlighting

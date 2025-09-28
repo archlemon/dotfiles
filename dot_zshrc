@@ -56,3 +56,4 @@ KEYTIMEOUT=1
 export PATH="$PATH:/home/matt/.lmstudio/bin"
 # End of LM Studio CLI section
 
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
