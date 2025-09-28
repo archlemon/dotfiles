@@ -4,8 +4,11 @@ export PATH=~/.local/bin:$PATH
 alias l=lvim
 alias v=vim
 alias n=nvim
+<<<<<<< Updated upstream
 alias suspend="systemctl suspend"
 alias hexit="hyprctl dispatch exit"
+=======
+>>>>>>> Stashed changes
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/home/matt/.lmstudio/bin"
