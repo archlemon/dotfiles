@@ -10,23 +10,38 @@ fi
 # Get current session name
 current_session=$(tmux display-message -p "#{session_name}")
 
-# Get list of non-numeric session names (like tms and tmss create)
-named_sessions=$(tmux list-sessions -F "#{session_name}" | grep -vE '^[0-9]+$')
-
-# Find the last named session (most recently used, excluding current)
+# Try to get the last session from tmss storage
 last_session=""
-for session in $named_sessions; do
-    if [[ "$session" != "$current_session" ]]; then
-        last_session="$session"
-        break
+if [[ -f /tmp/tmux_last_session ]]; then
+    stored_session=$(cat /tmp/tmux_last_session)
+    # Verify the stored session still exists and is different from current
+    if tmux has-session -t="$stored_session" 2>/dev/null && [[ "$stored_session" != "$current_session" ]]; then
+        last_session="$stored_session"
     fi
-done
+fi
+
+# Fallback: if no stored session or it's invalid, find the last named session
+if [[ -z "$last_session" ]]; then
+    # Get list of non-numeric session names (like tms and tmss create)
+    named_sessions=$(tmux list-sessions -F "#{session_name}" | grep -vE '^[0-9]+$')
+    
+    # Find the last named session (most recently used, excluding current)
+    for session in $named_sessions; do
+        if [[ "$session" != "$current_session" ]]; then
+            last_session="$session"
+            break
+        fi
+    done
+fi
 
 # If no other named session exists, show message and exit
 if [[ -z "$last_session" ]]; then
     tmux display-message "No other named sessions available to switch to."
     exit 0
 fi
+
+# Store current session before switching (for next tmsr call)
+echo "$current_session" > /tmp/tmux_last_session
 
 # Switch to the last session
 tmux switch-client -t "$last_session"

@@ -50,6 +50,10 @@ if [[ -z "$TMUX" ]] && [[ -z "$tmux_running" ]]; then
     exec tmux new-session -s "$selected_name" -c "$selected"
 fi
 
+# Store current session before switching (for tmsr integration)
+current_session=$(tmux display-message -p "#{session_name}")
+echo "$current_session" > /tmp/tmux_last_session
+
 # Create the session if it doesn't exist
 if ! tmux has-session -t="$selected_name" 2>/dev/null; then
     tmux new-session -ds "$selected_name" -c "$selected"

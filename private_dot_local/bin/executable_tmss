@@ -24,6 +24,10 @@ if [[ -z "$selected" ]]; then
     exit 0
 fi
 
+# Store current session before switching (for tmsr integration)
+current_session=$(tmux display-message -p "#{session_name}")
+echo "$current_session" > /tmp/tmux_last_session
+
 # Switch to the selected session
 tmux switch-client -t "$selected"
 
