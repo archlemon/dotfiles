@@ -22,13 +22,21 @@ source = ~/.config/hypr/mocha.conf
 ### MONITORS ###
 ################
 
+{{ if eq .chezmoi.hostname "matt-b650iax" }}
+$primary = DP-2
+$secondary = HDMI-A-1
+{{ else if eq .chezmoi.hostname "framework" }}
+$primary = DP-4
+$secondary = HDMI-A-1
+{{ end }}
+
 # See https://wiki.hyprland.org/Configuring/Monitors/
 monitor = ,preferred,auto,1.25
 
-{{ if eq .chezmoi.hostname "matt-b650iax" }}
 # divide desired position by 1.25 due to display scaling
-monitor = DP-2, 3840x2160@143.85, 0x1152, 1.25
-monitor = HDMI-A-1, 2560x1440@144.00, 512x0, 1.25
+{{ if has .chezmoi.hostname (list "matt-b650iax" "framework") }}
+monitor = $primary, 3840x2160@143.85, 0x1152, 1.25
+monitor = $secondary, 2560x1440@144.00, 512x0, 1.25
 {{ end }}
 
 
@@ -104,9 +112,11 @@ exec-once = hyprctl keyword "input:accel_profile" "adaptive"
 exec-once = xsettingsd &
 exec-once = gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
+exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
 exec-once = [workspace 1 silent] $vpn
 
-{{ if eq .chezmoi.hostname "matt-b650iax" }}
+{{ if has .chezmoi.hostname (list "matt-b650iax" "framework") }}
 {{ else }}
 {{ end }}
 
@@ -403,17 +413,17 @@ xwayland {
     force_zero_scaling = true
 }
 
-{{ if eq .chezmoi.hostname "matt-b650iax" }}
-workspace = 1, monitor:HDMI-A-1
-workspace = 2, monitor:DP-2
-workspace = 3, monitor:DP-2
-workspace = 4, monitor:DP-2
-workspace = 5, monitor:DP-2
-workspace = 6, monitor:DP-2
-workspace = 7, monitor:DP-2
-workspace = 8, monitor:DP-2
-workspace = 9, monitor:DP-2
-workspace = 0, monitor:DP-2
+{{ if has .chezmoi.hostname (list "matt-b650iax" "framework") }}
+workspace = 1, monitor:$secondary
+workspace = 2, monitor:$primary
+workspace = 3, monitor:$primary
+workspace = 4, monitor:$primary
+workspace = 5, monitor:$primary
+workspace = 6, monitor:$primary
+workspace = 7, monitor:$primary
+workspace = 8, monitor:$primary
+workspace = 9, monitor:$primary
+workspace = 0, monitor:$primary
 env = GDK_SCALE,1.25
 env = GDK_DPI_SCALE,1
 {{ else }}

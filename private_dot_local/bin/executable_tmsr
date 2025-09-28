@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Script to switch between current and last used tmux session (like vim's ctrl-^)
+
+# Ensure tmux is running
+if ! pgrep tmux > /dev/null; then
+    echo "No tmux sessions found."
+    exit 0
+fi
+
+# Get current session name
+current_session=$(tmux display-message -p "#{session_name}")
+
+# Get list of non-numeric session names (like tms and tmss create)
+named_sessions=$(tmux list-sessions -F "#{session_name}" | grep -vE '^[0-9]+$')
+
+# Find the last named session (most recently used, excluding current)
+last_session=""
+for session in $named_sessions; do
+    if [[ "$session" != "$current_session" ]]; then
+        last_session="$session"
+        break
+    fi
+done
+
+# If no other named session exists, show message and exit
+if [[ -z "$last_session" ]]; then
+    tmux display-message "No other named sessions available to switch to."
+    exit 0
+fi
+
+# Switch to the last session
+tmux switch-client -t "$last_session"

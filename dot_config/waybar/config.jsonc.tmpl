@@ -1,6 +1,8 @@
 {
     {{ if eq .chezmoi.hostname "matt-b650iax" }}
     "output": "DP-2",
+    {{ else if eq .chezmoi.hostname "framework" }}
+    "output": "DP-4",
     {{ end }}
     "layer": "top",
     "position": "top",
