@@ -4,6 +4,7 @@ bluetui
 brave-bin
 brightnessctl
 btop
+cameractrls
 chezmoi
 composer
 docker
