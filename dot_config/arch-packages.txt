@@ -38,6 +38,7 @@ phpactor
 polkit-gnome
 postgresql-libs
 prettierd
+python-pipx
 qbittorrent
 qt5-wayland
 qt5ct
