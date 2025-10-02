@@ -65,4 +65,9 @@ KEYTIMEOUT=1
 export PATH="$PATH:/home/matt/.lmstudio/bin"
 # End of LM Studio CLI section
 
+fpath=($HOME/.zsh/completions $fpath)
+
+autoload -U compinit
+compinit
+
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
