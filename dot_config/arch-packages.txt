@@ -1,5 +1,6 @@
 bc
 bibata-cursor-theme
+blender-bin
 bluetui
 brave-bin
 brightnessctl

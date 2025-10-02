@@ -10,7 +10,6 @@ io.mpv.Mpv
 it.mijorus.smile
 net.blockbench.Blockbench
 org.audacityteam.Audacity
-org.blender.Blender
 org.kde.krita
 org.libreoffice.LibreOffice
 org.videolan.VLC
