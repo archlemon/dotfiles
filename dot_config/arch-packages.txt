@@ -30,11 +30,13 @@ hyprshot
 jq
 kitty
 lf-git
+lsp-plugins-lv2
 mako
 neovim
 nerd-fonts
 nodejs
 nwg-look
+pgcli
 phpactor
 polkit-gnome
 postgresql-libs
