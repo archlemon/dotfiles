@@ -48,6 +48,7 @@ qt5ct
 qt6ct
 repomix
 rustup
+slack-desktop
 snapshot
 spotify-player
 sublime-text-4

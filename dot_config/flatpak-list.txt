@@ -2,7 +2,6 @@ ca.desrt.dconf-editor
 com.discordapp.Discord
 com.github.tchx84.Flatseal
 com.github.xournalpp.xournalpp
-com.slack.Slack
 com.spotify.Client
 fr.handbrake.ghb
 io.github.shiftey.Desktop
