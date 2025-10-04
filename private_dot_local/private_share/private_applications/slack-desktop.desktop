@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Slack Desktop
 StartupWMClass=Slack
-Comment=Slack Desktop
+Comment=Slack Desktop with Wayland launch options
 GenericName=Slack Client for Linux
 Exec=/usr/bin/slack --enable-features=UseOzonePlatform --ozone-platform=wayland --gtk-version=3 -s %U
 Icon=slack
