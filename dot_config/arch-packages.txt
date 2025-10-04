@@ -17,7 +17,7 @@ gnome-disk-utility
 gnome-themes-extra
 go
 go-yq
-gobject-instrospection
+gobject-introspection
 godot
 gst-libav
 gst-plugins-bad
