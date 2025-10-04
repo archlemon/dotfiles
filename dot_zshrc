@@ -65,6 +65,12 @@ KEYTIMEOUT=1
 export PATH="$PATH:/home/matt/.lmstudio/bin"
 # End of LM Studio CLI section
 
+HISTSIZE=50000
+SAVEHIST=50000
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_REDUCE_BLANKS
+
 fpath=($HOME/.zsh/completions $fpath)
 
 autoload -U compinit
