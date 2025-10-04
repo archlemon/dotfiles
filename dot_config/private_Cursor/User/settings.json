@@ -64,7 +64,6 @@
   "window.confirmSaveUntitledWorkspace": false,
   "window.restoreWindows": "none",
   "editor.fontSize": 13,
-  "editor.minimap.enabled": true,
   "vim.smartRelativeLine": true,
   "vim.enableNeovim": true,
   "vim.neovimConfigPath": "~/.config/nvim/init.vim",
