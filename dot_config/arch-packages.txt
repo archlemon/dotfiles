@@ -50,7 +50,7 @@ repomix
 rustup
 snapshot
 spotify-player
-sublime-text
+sublime-text-4
 sushi
 tmux
 vim
