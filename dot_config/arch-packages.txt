@@ -36,6 +36,7 @@ neovim
 nerd-fonts
 nodejs
 nwg-look
+openssh
 pgcli
 phpactor
 polkit-gnome
