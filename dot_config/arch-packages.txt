@@ -66,6 +66,7 @@ xdg-desktop-portal-gnome
 xdg-desktop-portal-hyprland
 xsettingsd
 xwaylandvideobridge
+yt-dlp
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
