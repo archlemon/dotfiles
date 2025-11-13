@@ -1,0 +1,126 @@
+{
+    "window.zoomLevel": 1.25,
+    "editor.wordWrap": "on",
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "continue.telemetryEnabled": false,
+    "editor.minimap.enabled": false,
+    "vim.neovimConfigPath": "~/.config/nvim/init.vim",
+    "vim.neovimPath": "/usr/bin/nvim",
+    "vim.enableNeovim": true,
+    "vim.highlightedyank.enable": true,
+    "vim.ignorecase": false,
+    "vim.hlsearch": true,
+    "vim.leader": " ",
+    "vim.neovimUseConfigFile": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.smartRelativeLine": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "<leader>"
+            ],
+            "commands": [
+                "workbench.action.showAllEditors"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "s",
+                "f"
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w"
+            ],
+            "commands": [
+                "workbench.action.files.save"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "b",
+                "c"
+            ],
+            "commands": [
+                "workbench.action.closeActiveEditor"
+            ]
+        },
+        {
+            "before": [
+                "<C-^>"
+            ],
+            "commands": [
+                "workbench.action.navigateBack"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "e"
+            ],
+            "commands": [
+                {
+                    "command": "editor.action.showHover",
+                    "args": {
+                        "kind": "errors"
+                    }
+                }
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "commands": [
+                "editor.action.showDefinitionPreviewHover"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "r",
+                "d"
+            ],
+            "commands": [
+                "editor.action.revealDefinition"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "h"
+            ],
+            "commands": [
+                ":noh"
+            ]
+        }
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "files.exclude": {
+        "**/*.uid": true,
+        "**/*.import": true,
+        ".godot": true
+    },
+    "search.exclude": {
+        "**/*.uid": true,
+        "**/*.import": true,
+        ".godot": true
+    },
+    "workbench.editor.showTabs": "single",
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "workbench.activityBar.location": "bottom",
+    "zenMode.showTabs": "none",
+    "window.commandCenter": false,
+}

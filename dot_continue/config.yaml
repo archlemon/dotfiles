@@ -1,0 +1,17 @@
+name: Local Config
+version: 1.0.0
+schema: v1
+models:
+  - name: Qwen3 Coder 30b
+    provider: lmstudio
+    model: qwen/qwen3-coder-30b
+    apiBase: http://192.168.0.118:1234/v1/
+    roles:
+      - chat
+      - edit
+      - apply
+      - autocomplete
+  - name: GPT OSS 120b
+    provider: lmstudio
+    model: openai/gpt-oss-120b
+    apiBase: http://192.168.0.118:1234/v1/
