@@ -123,4 +123,7 @@
     "workbench.activityBar.location": "bottom",
     "zenMode.showTabs": "none",
     "window.commandCenter": false,
+    "window.restoreWindows": "none",
+    "makefile.configureOnOpen": false,
+    "workbench.startupEditor": "none",
 }
