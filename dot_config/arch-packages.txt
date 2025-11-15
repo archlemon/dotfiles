@@ -56,6 +56,7 @@ spotify-player
 sublime-text-4
 sushi
 tmux
+tree
 vim
 vulkan-headers
 vulkan-radeon
