@@ -9,6 +9,7 @@ cameractrls
 chezmoi
 code
 composer
+cursor-bin
 docker
 docker-buildx
 docker-compose
