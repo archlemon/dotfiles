@@ -4,42 +4,91 @@
   "editor.wordWrap": "on",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<leader>", "<leader>"],
-      "commands": ["workbench.action.showAllEditors"]
-    },
-    {
-      "before": ["<leader>", "s", "f"],
-      "commands": ["workbench.action.quickOpen"]
-    },
-    {
-      "before": ["<leader>", "w"],
-      "commands": ["workbench.action.files.save"]
-    },
-    {
-      "before": ["<leader>", "b", "c"],
-      "commands": ["workbench.action.closeActiveEditor"]
-    },
-    {
-      "before": ["<C-^>"],
-      "commands": ["workbench.action.navigateBack"]
-    },
-    {
-      "before": ["<leader>", "e"],
+      "before": [
+        "<leader>",
+        "<leader>"
+      ],
       "commands": [
-        { "command": "editor.action.showHover", "args": { "kind": "errors" } }
+        "workbench.action.showAllEditors"
       ]
     },
     {
-      "before": ["K"],
-      "commands": ["editor.action.showDefinitionPreviewHover"]
+      "before": [
+        "<leader>",
+        "s",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
     },
     {
-      "before": ["g", "r", "d"],
-      "commands": ["editor.action.revealDefinition"]
+      "before": [
+        "<leader>",
+        "w"
+      ],
+      "commands": [
+        "workbench.action.files.save"
+      ]
     },
     {
-      "before": ["<leader>", "h"],
-      "commands": [":noh"]
+      "before": [
+        "<leader>",
+        "b",
+        "c"
+      ],
+      "commands": [
+        "workbench.action.closeActiveEditor"
+      ]
+    },
+    {
+      "before": [
+        "<C-^>"
+      ],
+      "commands": [
+        "workbench.action.navigateBack"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "e"
+      ],
+      "commands": [
+        {
+          "command": "editor.action.showHover",
+          "args": {
+            "kind": "errors"
+          }
+        }
+      ]
+    },
+    {
+      "before": [
+        "K"
+      ],
+      "commands": [
+        "editor.action.showDefinitionPreviewHover"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "r",
+        "d"
+      ],
+      "commands": [
+        "editor.action.revealDefinition"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "h"
+      ],
+      "commands": [
+        ":noh"
+      ]
     }
   ],
   "vim.insertModeKeyBindingsNonRecursive": [
@@ -83,5 +132,15 @@
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
-  "workbench.colorTheme": "Catppuccin Mocha"
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "cursor.composer.usageSummaryDisplay": "always",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  }
 }
