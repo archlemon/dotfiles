@@ -10,6 +10,7 @@ chezmoi
 code
 composer
 cursor-bin
+cursor-cli
 docker
 docker-buildx
 docker-compose
