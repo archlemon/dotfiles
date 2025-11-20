@@ -1,3 +1,6 @@
+@anthropic-ai/claude-code
 @continuedev/cli
+@google/gemini-cli
+@openai/code
 intelephense
 repomix
