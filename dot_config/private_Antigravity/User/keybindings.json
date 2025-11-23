@@ -1,0 +1,23 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "ctrl+i",
+    "command": "composerMode.agent"
+  },
+  {
+    "key": "alt+l",
+    "command": "editor.action.acceptCursorTabSuggestion",
+    "when": "cpp.shouldAcceptTab"
+  },
+  {
+    "key": "tab",
+    "command": "-editor.action.acceptCursorTabSuggestion",
+    "when": "cpp.shouldAcceptTab"
+  }
+  // {
+  //   "command": "vscode-neovim.send",
+  //   "key": "ctrl+shift+6",
+  //   "when": "editorTextFocus && neovim.mode != insert",
+  //   "args": "<C-^>"
+  // }
+]

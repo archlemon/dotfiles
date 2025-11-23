@@ -1,0 +1,147 @@
+{
+  "window.commandCenter": true,
+  "window.zoomLevel": 2,
+  "editor.wordWrap": "on",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<leader>",
+        "<leader>"
+      ],
+      "commands": [
+        "workbench.action.showAllEditors"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "s",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "w"
+      ],
+      "commands": [
+        "workbench.action.files.save"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "b",
+        "c"
+      ],
+      "commands": [
+        "workbench.action.closeActiveEditor"
+      ]
+    },
+    {
+      "before": [
+        "<C-^>"
+      ],
+      "commands": [
+        "workbench.action.navigateBack"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "e"
+      ],
+      "commands": [
+        {
+          "command": "editor.action.showHover",
+          "args": {
+            "kind": "errors"
+          }
+        }
+      ]
+    },
+    {
+      "before": [
+        "K"
+      ],
+      "commands": [
+        "editor.action.showDefinitionPreviewHover"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "r",
+        "d"
+      ],
+      "commands": [
+        "editor.action.revealDefinition"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "h"
+      ],
+      "commands": [
+        ":noh"
+      ]
+    }
+  ],
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "key": "ctrl+y",
+      "command": "acceptSelectedSuggestion",
+      "when": "suggestWidgetVisible"
+    }
+  ],
+  "prettier.jsxSingleQuote": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "vim.highlightedyank.enable": true,
+  "vim.hlsearch": true,
+  "vim.leader": " ",
+  "[gdscript]": {
+    "editor.defaultFormatter": "geequlim.godot-tools",
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4
+  },
+  "editor.lineHeight": 1.5,
+  "window.confirmSaveUntitledWorkspace": false,
+  "window.restoreWindows": "none",
+  "vim.smartRelativeLine": true,
+  "vim.enableNeovim": true,
+  "vim.neovimConfigPath": "~/.config/nvim/init.vim",
+  "vim.neovimPath": "/usr/bin/nvim",
+  "vim.neovimUseConfigFile": true,
+  "files.exclude": {
+    "**/*.uid": true,
+    "**/*.import": true,
+    ".godot": true
+  },
+  "search.exclude": {
+    "**/*.uid": true,
+    "**/*.import": true,
+    ".godot": true
+  },
+  "makefile.configureOnOpen": true,
+  "workbench.editor.showTabs": "single",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "cursor.composer.usageSummaryDisplay": "always",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "editor.minimap.enabled": false
+}
