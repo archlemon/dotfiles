@@ -38,5 +38,6 @@ yay -S --needed $(< ~/.config/arch-packages.txt)
 
 ```bash
 mkdir ~/.npm-global
+npm config set prefix '~/.npm-global'
 npm i -g $(< ~/.config/npm-packages.txt)
 ```
