@@ -142,5 +142,12 @@
   "cursor.composer.usageSummaryDisplay": "always",
   "[typescriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
-  }
+  },
+  "kilo-code.allowedCommands": [
+    "git log",
+    "git diff",
+    "git show",
+    "docker compose build"
+  ],
+  "kilo-code.deniedCommands": []
 }

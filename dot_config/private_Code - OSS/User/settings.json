@@ -126,4 +126,10 @@
     "window.restoreWindows": "none",
     "makefile.configureOnOpen": false,
     "workbench.startupEditor": "none",
+    "kilo-code.allowedCommands": [
+        "git log",
+        "git diff",
+        "git show"
+    ],
+    "kilo-code.deniedCommands": [],
 }

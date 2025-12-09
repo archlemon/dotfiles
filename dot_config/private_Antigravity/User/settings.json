@@ -143,5 +143,9 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  "editor.minimap.enabled": false
+  "editor.minimap.enabled": false,
+  "[php]": {
+    "editor.defaultFormatter": "DEVSENSE.phptools-vscode"
+  },
+  "json.schemaDownload.enable": true
 }
