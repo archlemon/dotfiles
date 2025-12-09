@@ -37,5 +37,6 @@ yay -S --needed $(< ~/.config/arch-packages.txt)
 ## Global NPM libraries
 
 ```bash
-sudo npm i -g $(< ~/.config/npm-packages.txt)
+mkdir ~/.npm-global
+npm i -g $(< ~/.config/npm-packages.txt)
 ```
