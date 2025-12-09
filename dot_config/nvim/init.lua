@@ -1107,6 +1107,11 @@ require('lazy').setup({
     end,
   },
 
+  {
+    'folke/zen-mode.nvim',
+    opts = {},
+  },
+
   --
   -- NOTE: CUSTOM END
   --
