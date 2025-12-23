@@ -59,6 +59,7 @@ sublime-text-4
 sushi
 tmux
 tree
+v4l2loopback-dkms
 vim
 vulkan-headers
 vulkan-radeon
@@ -71,6 +72,7 @@ xdg-desktop-portal-gnome
 xdg-desktop-portal-hyprland
 xsettingsd
 xwaylandvideobridge
+yazi
 yt-dlp
 zsh
 zsh-autosuggestions
