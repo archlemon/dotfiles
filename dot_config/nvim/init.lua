@@ -716,7 +716,7 @@ require('lazy').setup({
         rust_analyzer = {},
         -- phpactor = {},
         yamlls = {},
-        postgrestools = {},
+        postgres_lsp = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -772,6 +772,20 @@ require('lazy').setup({
           end,
         },
       }
+
+      do
+        vim.lsp.config('gdscript', {
+          cmd = vim.lsp.rpc.connect('127.0.0.1', 6005),
+          filetypes = { 'gd', 'gdscript', 'gdshader' },
+
+          root_markers = { 'project.godot', '.git' },
+
+          single_file_support = false,
+          capabilities = capabilities,
+        })
+
+        vim.lsp.enable 'gdscript'
+      end
     end,
   },
 
