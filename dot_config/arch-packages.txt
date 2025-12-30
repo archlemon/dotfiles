@@ -14,6 +14,7 @@ cursor-cli
 docker
 docker-buildx
 docker-compose
+dropbox
 easyeffects
 flatpak
 gnome-disk-utility
@@ -33,6 +34,7 @@ hyprshot
 jq
 kitty
 lf-git
+libappindicator
 lsp-plugins-lv2
 mako
 neovim
