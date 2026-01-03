@@ -412,10 +412,23 @@ bindl = , XF86AudioPrev, exec, playerctl previous
 # windowrule = float,class:^(kitty)$,title:^(kitty)$
 
 # Ignore maximize requests from apps. You'll probably like this.
-windowrule = suppressevent maximize, class:.*
+windowrule {
+    name = windowrule-1
+    suppress_event = maximise
+    match:class = .*
+}
 
 # Fix some dragging issues with XWayland
-windowrule = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0
+windowrule {
+  name = windowrule-2
+  no_focus = on
+  match:class = ^$
+  match:title = ^$
+  match:xwayland = 1
+  match:float = 1
+  match:fullscreen = 0
+  match:pin = 0
+}
 
 xwayland {
     force_zero_scaling = true
@@ -447,14 +460,27 @@ env = GDK_SCALE,$scale
 env = GDK_DPI_SCALE,$dpiScale
 
 # try hide xwaylandvideobridge dummy window
-windowrule = opacity 0.0 override, class:^(xwaylandvideobridge)$
-windowrule = noanim, class:^(xwaylandvideobridge)$
-windowrule = noinitialfocus, class:^(xwaylandvideobridge)$
-windowrule = maxsize 1 1, class:^(xwaylandvideobridge)$
-windowrule = noblur, class:^(xwaylandvideobridge)$
-windowrule = nofocus, class:^(xwaylandvideobridge)$
+windowrule {
+  name = windowrule-3
+  opacity = 0.0 override
+  no_anim = on
+  no_initial_focus = on
+  max_size = 1 1
+  no_blur = on
+  no_focus = on
+  match:class = ^(xwaylandvideobridge)$
+}
 
 # waybar tooltip fixes
-layerrule = noanim, waybar
-layerrule = noanim, ^gtk-layer-shell$
-layerrule = ignorealpha, waybar
+layerrule {
+  name = layerrule-1
+  no_anim = on
+  ignore_alpha = 0
+  match:namespace = waybar
+}
+
+layerrule {
+  name = layerrule-2
+  no_anim = on
+  match:namespace = ^gtk-layer-shell$
+}
