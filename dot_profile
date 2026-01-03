@@ -7,7 +7,7 @@ alias n=nvim
 alias suspend="systemctl suspend"
 alias hexit="hyprctl dispatch exit"
 alias update="yay -Syu --noconfirm update && flatpak update -y"
-alias hl=hyprland
+alias hl=start-hyprland
 alias mbat='upower -i /org/freedesktop/UPower/devices/battery_hidpp_battery_1 | grep -E "state|percentage|battery-level"'
 alias cnt='cn --config ~/.continue/config.yaml'
 
