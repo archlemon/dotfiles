@@ -50,7 +50,8 @@
 #custom-vpn,
 #custom-lock,
 #custom-power,
-#custom-mouse-accel {
+#custom-mouse-accel,
+#custom-screenshot {
 	background-color: @surface0;
 	padding: 0.5rem 1rem;
 	border-radius: 1rem;
@@ -171,12 +172,16 @@
 	color: @blue;
 }
 
+#custom-screenshot {
+	color: @white;
+}
+
 .modules-left, .modules-right {
 	margin: 0px 0.5rem;
 }
 
 /* start group */
-#bluetooth, #cpu, #custom-mouse-accel {
+#bluetooth, #cpu, #custom-screenshot {
 	border-radius: 1rem 0 0 1rem;
 	margin-right: 0;
 	padding: 0.5rem 0.25rem;
@@ -184,7 +189,7 @@
 }
 
 /* middle group */
-#custom-vpn, #memory, #custom-temp {
+#custom-vpn, #memory, #custom-temp, #custom-mouse-accel {
 	border-radius: 0;
 	margin-left: 0;
 	padding: 0.5rem 0.25rem;

@@ -28,6 +28,7 @@
         "custom/vpn",
         "network#wifi",
         "network#wired",
+        "custom/screenshot",
         "custom/mouse-accel",
         "custom/power",
     ],
@@ -208,5 +209,11 @@
         "signal": 10,
         "on-click": "~/.config/waybar/scripts/mouse-accel.sh toggle",
         "tooltip": true
-    }
+    },
+    "custom/screenshot": {
+        "format": "",
+        "on-click": "hyprshot -m output",
+        "on-click-right": "hyprshot -m region",
+        "on-click-middle": "hyprshot -m window",
+    },
 }
