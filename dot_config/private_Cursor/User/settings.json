@@ -129,9 +129,6 @@
   },
   "makefile.configureOnOpen": true,
   "workbench.editor.showTabs": "single",
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
   "workbench.colorTheme": "Catppuccin Mocha",
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
