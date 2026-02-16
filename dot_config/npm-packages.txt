@@ -2,6 +2,7 @@
 @continuedev/cli
 @fsouza/prettierd
 @google/gemini-cli
+@musistudio/claude-code-router
 @openai/codex
 intelephense
 opencode-ai
