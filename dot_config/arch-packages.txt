@@ -44,6 +44,7 @@ nwg-look
 openssh
 pgcli
 phpactor
+pnpm
 polkit-gnome
 postgresql-libs
 prettierd
