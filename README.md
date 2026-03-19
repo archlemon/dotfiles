@@ -42,6 +42,13 @@ npm config set prefix '~/.npm-global'
 npm i -g $(< ~/.config/npm-packages.txt)
 ```
 
+## Brew cask and formulae
+
+```bash
+brew install $(< ~/.config/brew-casks.txt)
+brew install $(< ~/.config/brew-formulaes.txt)
+```
+
 ## Hyprland Trackball Raw Input Godot Drag Fix
 
 This adds drag threshold to stop simple clicks from dragging.
