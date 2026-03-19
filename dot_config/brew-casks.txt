@@ -3,6 +3,7 @@ audacity
 blender
 blockbench
 bruno
+caffeine
 claude-code
 codex
 cursor
