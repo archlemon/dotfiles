@@ -46,7 +46,7 @@ npm i -g $(< ~/.config/npm-packages.txt)
 
 ```bash
 brew install $(< ~/.config/brew-casks.txt)
-brew install $(< ~/.config/brew-formulaes.txt)
+brew install --cask $(< ~/.config/brew-formulaes.txt)
 ```
 
 ## Hyprland Trackball Raw Input Godot Drag Fix
