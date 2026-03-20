@@ -3,6 +3,7 @@ claude-code-router
 composer
 cursor-cli
 dnsmasq
+fzf
 gemini-cli
 go
 neovim
