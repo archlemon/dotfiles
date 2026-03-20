@@ -2,6 +2,7 @@ btop
 claude-code-router
 composer
 cursor-cli
+dnsmasq
 gemini-cli
 go
 neovim
