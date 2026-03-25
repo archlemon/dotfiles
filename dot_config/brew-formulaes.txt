@@ -3,6 +3,7 @@ claude-code-router
 composer
 cursor-cli
 dnsmasq
+ffmpeg
 fzf
 gemini-cli
 go
