@@ -41,6 +41,7 @@ neovim
 nerd-fonts
 nodejs
 nwg-look
+openbsd-netcat
 openssh
 pgcli
 phpactor
