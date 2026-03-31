@@ -42,6 +42,28 @@ npm config set prefix '~/.npm-global'
 npm i -g $(< ~/.config/npm-packages.txt)
 ```
 
+## Brew cask and formulae
+
+```bash
+brew install $(< ~/.config/brew-casks.txt)
+brew install --cask $(< ~/.config/brew-formulaes.txt)
+sudo brew services start dnsmasq
+```
+
+## Mac dnsmasq docker routing
+
+
+```bash
+sudo mkdir -p /usr/local/etc
+sudo touch /usr/local/etc/dnsmasq.conf
+```
+
+```
+listen-address=127.0.0.1
+port=35353
+address=/.localhost/127.0.0.1
+```
+
 ## Hyprland Trackball Raw Input Godot Drag Fix
 
 This adds drag threshold to stop simple clicks from dragging.

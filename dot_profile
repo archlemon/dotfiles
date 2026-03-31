@@ -15,3 +15,8 @@ alias cnt='cn --config ~/.continue/config.yaml'
 export PATH="$PATH:/home/matt/.lmstudio/bin"
 # End of LM Studio CLI section
 
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/matt/.lmstudio/bin"
+# End of LM Studio CLI section
+
