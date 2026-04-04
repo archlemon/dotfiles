@@ -1,8 +1,9 @@
 {
 	"ignored_packages":
 	[
+		"Package Control",
 	],
 	"theme": "Adaptive.sublime-theme",
 	"color_scheme": "Catppuccin Mocha.sublime-color-scheme",
-	"index_files": true,
+	"index_files": false,
 }

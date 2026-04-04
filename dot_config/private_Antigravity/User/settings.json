@@ -150,5 +150,6 @@
   "json.schemaDownload.enable": false,
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
-  }
+  },
+  "python.languageServer": "Default"
 }
