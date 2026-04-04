@@ -30,6 +30,7 @@ gst-plugins-ugly
 gtk-layer-shell
 gtk3
 hyprcap
+hyprpicker
 hyprshot
 jq
 kitty
