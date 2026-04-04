@@ -50,6 +50,7 @@ pnpm
 polkit-gnome
 postgresql-libs
 prettierd
+python-huggingface-hub
 python-pipx
 qbittorrent
 qt5-wayland
