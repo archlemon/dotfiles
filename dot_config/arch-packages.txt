@@ -38,6 +38,7 @@ lf-git
 libappindicator
 lsp-plugins-lv2
 mako
+needrestart
 neovim
 nerd-fonts
 nodejs
