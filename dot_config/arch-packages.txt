@@ -67,6 +67,7 @@ sushi
 tmux
 toolbox
 tree
+tree-sitter-cli
 v4l2loopback-dkms
 vim
 vulkan-headers
