@@ -2,58 +2,59 @@
 set -euo pipefail
 
 CRIT=80
-
 tooltip=""
 max_temp=0
 
+read_sys() {
+  cat "$1" 2>/dev/null
+}
+
 for zone in /sys/class/thermal/thermal_zone*; do
-  [ -e "$zone/temp" ] || continue
-  name=$(cat "$zone/type" 2>/dev/null || echo "zone")
-  temp=$(awk '{printf "%d", $1/1000}' "$zone/temp")
-  tooltip+=$(printf "%3d°C | %s" "$temp" "$name")
-  tooltip+="\n"
+  [[ -e "$zone/temp" ]] || continue
 
-  if (( $(echo "$temp > $max_temp" | bc -l) )); then
-    max_temp=$temp
-  fi
-done
+  name=$(read_sys "$zone/type") || name="unknown"
+  raw_temp=$(read_sys "$zone/temp") || continue
+  temp=$(( raw_temp / 1000 ))
 
-for temp_file in /sys/class/hwmon/hwmon*/temp*_input; do
-  [ -e "$temp_file" ] || continue
-
-  dir="${temp_file%/*}"
-  if [ -r "$dir/name" ]; then
-    name=$(cat "$dir/name" 2>/dev/null || echo "hwmon")
-  else
-    name="hwmon"
-  fi
-
-  label_file="${temp_file%_input}_label"
-  if [ -r "$label_file" ]; then
-    label=$(cat "$label_file" 2>/dev/null || echo "sensor")
-  else
-    label=$(basename "${temp_file%_*}")
-  fi
-
-  temp=$(awk '{printf "%d", $1/1000}' "$temp_file")
-  tooltip+=$(printf "%3d°C | %s (%s)" "$temp" "$label" "$name")
-  tooltip+="\n"
+  tooltip+="$(printf "%3d°C | %s\n" "$temp" "$name")"$'\n'
 
   if (( temp > max_temp )); then
     max_temp=$temp
   fi
 done
 
-tooltip="${tooltip%\\n}"
+for temp_file in /sys/class/hwmon/hwmon*/temp*_input; do
+  [[ -e "$temp_file" ]] || continue
 
-perc=$(printf "%.0f" "$max_temp")
-if (( perc < 0 )); then perc=0; fi
-if (( perc > 100 )); then perc=100; fi
+  dir="${temp_file%/*}"
+  name=$(read_sys "$dir/name") || name="unknown"
+
+  label_file="${temp_file%_input}_label"
+  if [[ -r "$label_file" ]]; then
+    label=$(read_sys "$label_file") || label=$(basename "${temp_file%_*}")
+  else
+    label=$(basename "${temp_file%_*}")
+  fi
+
+  raw_temp=$(read_sys "$temp_file") || continue
+  temp=$(( raw_temp / 1000 ))
+
+  tooltip+="$(printf "%3d°C | %s (%s)\n" "$temp" "$label" "$name")"$'\n'
+
+  if (( temp > max_temp )); then
+    max_temp=$temp
+  fi
+done
+
+perc=$max_temp
+(( perc < 0 )) && perc=0
+(( perc > 100 )) && perc=100
 
 cls=""
-if (( $(echo "$max_temp >= $CRIT" | bc -l) )); then
-  cls="critical"
-fi
+(( max_temp >= CRIT )) && cls="critical"
 
-printf '{"text":"%s°C","tooltip":"%s","percentage":%d,"class":"%s"}\n' \
-  "$(printf "%d" $max_temp)" "$tooltip" "$perc" "$cls"
+printf "%s" "$tooltip" | jq -c -Rs \
+  --arg text "${max_temp}°C" \
+  --argjson percentage "$perc" \
+  --arg class "$cls" \
+  '{text: $text, tooltip: (sub("\n$"; "")), percentage: $percentage, class: $class}'
