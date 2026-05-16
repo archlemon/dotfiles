@@ -7,19 +7,21 @@ local colors = require("mocha")
 -- MONITORS    --
 -----------------
 
-{{ if eq .chezmoi.hostname "matt-b650iax" -}}
-local primary = "DP-2"
-local secondary = "HDMI-A-1"
-local scale = "1.25"
-local dpiScale = "1"
-{{ else if eq .chezmoi.hostname "framework" -}}
-local primary = "DP-4"
-local secondary = "HDMI-A-1"
-local scale = "1.25"
-local dpiScale = "1.25"
-{{ else -}}
+local primary = ""
+local secondary = ""
 local scale = "1.6"
 local dpiScale = "1.1"
+
+{{ if eq .chezmoi.hostname "matt-b650iax" -}}
+primary = "DP-2"
+secondary = "HDMI-A-1"
+scale = "1.25"
+dpiScale = "1"
+{{ else if eq .chezmoi.hostname "framework" -}}
+primary = "DP-4"
+secondary = "HDMI-A-1"
+scale = "1.25"
+dpiScale = "1.25"
 {{ end -}}
 
 hl.monitor({
@@ -91,20 +93,18 @@ local spotify = "flatpak run com.spotify.Client"
 -- ENV VARS    --
 -----------------
 
-config.env = {
-    "XDG_SESSION_TYPE,wayland",
-    "XDG_SESSION_DESKTOP,Hyprland",
-    "XDG_CURRENT_DESKTOP,Hyprland",
-    "QT_QPA_PLATFORM,wayland",
-    "QT_QPA_PLATFORMTHEME,qt5ct",
-    "ELECTRON_OZONE_PLATFORM_HINT,wayland",
-    "XCURSOR_SIZE,24",
-    "HYPRCURSOR_SIZE,24",
-    "GTK_TOOLTIP_TIMEOUT,0",
-    "GTK_NATIVE_TOOLTIPS,0",
-    "GDK_SCALE," .. scale,
-    "GDK_DPI_SCALE," .. dpiScale,
-}
+hl.env("XDG_SESSION_TYPE", "wayland")
+hl.env("XDG_SESSION_DESKTOP", "Hyprland")
+hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
+hl.env("QT_QPA_PLATFORM", "wayland")
+hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "wayland")
+hl.env("XCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("GTK_TOOLTIP_TIMEOUT", "0")
+hl.env("GTK_NATIVE_TOOLTIPS", "0")
+hl.env("GDK_SCALE", scale)
+hl.env("GDK_DPI_SCALE", dpiScale)
 
 -----------------
 -- AUTOSTART   --
