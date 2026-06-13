@@ -3,3 +3,4 @@ Name=Antigravity
 Exec=/home/matt/Applications/Antigravity/antigravity
 Type=Application
 Terminal=false
+MimeType=x-scheme-handler/antigravity;

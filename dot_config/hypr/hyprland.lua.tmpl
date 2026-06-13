@@ -20,7 +20,9 @@ dpiScale = "1"
 {{ else if eq .chezmoi.hostname "framework" -}}
 primary = "DP-4"
 secondary = "HDMI-A-1"
-scale = "1.25"
+--scale = "1.25"
+--dpiScale = "1.25"
+scale = "1.6"
 dpiScale = "1.25"
 {{ end -}}
 
@@ -43,7 +45,7 @@ hl.monitor({
 hl.monitor({
     output   = secondary,
     mode     = "2560x1440@144.00",
-    position = "512x-1152",
+    position = "auto-center-up",
     scale    = scale,
 })
 {{ end -}}
@@ -101,6 +103,7 @@ hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "wayland")
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("ADW_DISABLE_PORTAL", "1")
 hl.env("GTK_TOOLTIP_TIMEOUT", "0")
 hl.env("GTK_NATIVE_TOOLTIPS", "0")
 hl.env("GDK_SCALE", scale)
@@ -119,6 +122,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
   hl.exec_cmd("hyprctl keyword 'input:accel_profile' 'adaptive'")
   hl.exec_cmd("xsettingsd &")
+  hl.exec_cmd("dbus-update-activation-environment --systemd --all")
   hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
   hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
   hl.exec_cmd("[workspace 1 silent] " .. vpn)

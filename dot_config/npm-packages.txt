@@ -1,7 +1,6 @@
 @anthropic-ai/claude-code
 @continuedev/cli
 @fsouza/prettierd
-@google/gemini-cli
 @musistudio/claude-code-router
 @openai/codex
 intelephense

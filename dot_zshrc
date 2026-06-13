@@ -88,7 +88,20 @@ if [[ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
+# Ensure ZLE is loaded for interactive sessions
+if [[ -n "$ZSH_VERSION" && -o interactive ]]; then
+  # autoload -Uz && compinit
+  # Explicitly bind Ctrl+R to history search
+  bindkey '^R' history-incremental-search-backward
+  # Optional: Fix Ctrl+P for history up if needed
+  bindkey '^P' up-history
+fi
+
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/matt/.lmstudio/bin"
 # End of LM Studio CLI section
 
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/matt/.local/bin:$PATH"
