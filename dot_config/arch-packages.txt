@@ -5,6 +5,7 @@ bluetui
 brave-bin
 brightnessctl
 btop
+bun-bin
 cameractrls
 chezmoi
 code
