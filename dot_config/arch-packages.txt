@@ -48,7 +48,6 @@ nwg-look
 openbsd-netcat
 openssh
 pgcli
-phpactor
 pnpm
 polkit-gnome
 postgresql-libs
