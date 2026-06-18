@@ -48,6 +48,8 @@ nwg-look
 openbsd-netcat
 openssh
 pgcli
+piper-tts
+piper-voices-en-gb
 pnpm
 polkit-gnome
 postgresql-libs
@@ -62,6 +64,7 @@ repomix
 rustup
 slack-desktop
 snapshot
+speech-dispatcher
 spotify-player
 sublime-text-4
 sushi
