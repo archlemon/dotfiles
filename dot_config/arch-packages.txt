@@ -2,7 +2,7 @@ bc
 bibata-cursor-theme
 blender-bin
 bluetui
-brave-bin
+brave-origin-bin
 brightnessctl
 btop
 bun-bin
