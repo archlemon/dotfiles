@@ -5,7 +5,6 @@ cursor-cli
 dnsmasq
 ffmpeg
 fzf
-gemini-cli
 go
 neovim
 node
