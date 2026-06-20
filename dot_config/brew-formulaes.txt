@@ -18,6 +18,7 @@ repomix
 rustup
 tmux
 tree
+tree-sitter-cli
 vim
 zsh
 zsh-autosuggestions
