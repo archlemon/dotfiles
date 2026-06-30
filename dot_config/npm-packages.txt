@@ -1,4 +1,3 @@
-@anthropic-ai/claude-code
 @continuedev/cli
 @fsouza/prettierd
 @musistudio/claude-code-router
