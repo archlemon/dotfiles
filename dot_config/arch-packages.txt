@@ -47,6 +47,7 @@ nerd-fonts
 nodejs
 nwg-look
 openbsd-netcat
+opencode-bin
 openssh
 pgcli
 piper-tts

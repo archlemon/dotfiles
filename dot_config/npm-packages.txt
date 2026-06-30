@@ -3,5 +3,4 @@
 @musistudio/claude-code-router
 @openai/codex
 intelephense
-opencode-ai
 repomix
