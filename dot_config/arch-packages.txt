@@ -11,6 +11,7 @@ chezmoi
 claude-code
 code
 composer
+crush-bin
 cursor-bin
 cursor-cli
 docker
