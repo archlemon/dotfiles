@@ -1,5 +1,4 @@
 antigravity
-antigravity-cli
 audacity
 blender
 blockbench

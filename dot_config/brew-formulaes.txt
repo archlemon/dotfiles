@@ -5,6 +5,7 @@ cursor-cli
 dnsmasq
 ffmpeg
 fzf
+gemini-cli
 go
 neovim
 node
@@ -17,7 +18,6 @@ repomix
 rustup
 tmux
 tree
-tree-sitter-cli
 vim
 zsh
 zsh-autosuggestions
