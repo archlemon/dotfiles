@@ -78,7 +78,9 @@ config.workspace = {
 -- PROGRAMS    --
 -----------------
 
-local terminal = "kitty"
+local terminal_kitty = "kitty"
+local terminal_ghostty = "ghostty"
+local active_terminal = terminal_ghostty
 local fileManager = "nautilus"
 local menu = "wofi --conf ~/.config/wofi/config --style ~/.config/wofi/mocha.css"
 local menuSearch = "~/wofi-search.sh"
@@ -90,6 +92,11 @@ local sublimeText = "subl"
 local cursorApp = "cursor --enable-features=UseOzonePlatform --ozone-platform=wayland"
 local slack = "flatpak run com.slack.Slack --enable-features=UseOzonePlatform --ozone-platform=wayland"
 local spotify = "flatpak run com.spotify.Client"
+
+-- Helper function to generate the full command
+local function run_in_term(cmd)
+    return active_terminal .. " -e " .. cmd
+end
 
 -----------------
 -- ENV VARS    --
@@ -216,10 +223,10 @@ config.gestures = {
 local mainMod = "SUPER"
 
 -- Applications and Terminal Binds
-hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal .. " tmux new"))
+hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(run_in_term("tmux new")))
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd(sublimeText))
 hl.bind(mainMod .. " + ALT + Q", hl.dsp.exec_cmd(cursorApp))
-hl.bind(mainMod .. " + SHIFT + ALT + Q", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + SHIFT + ALT + Q", hl.dsp.exec_cmd(active_terminal))
 
 -- Window Management
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
@@ -232,8 +239,8 @@ hl.bind(mainMod .. " + ALT + P", hl.dsp.window.pseudo())
 
 -- File Management and Utilities
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(terminal .. " nn"))
-hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd(terminal .. " np"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(run_in_term("nn")))
+hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd(run_in_term("np")))
 hl.bind(mainMod .. " + U", hl.dsp.exec_cmd(spotify))
 
 -- Launchers and Menus

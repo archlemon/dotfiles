@@ -20,6 +20,7 @@ docker-compose
 dropbox
 easyeffects
 flatpak
+ghostty
 gnome-disk-utility
 gnome-themes-extra
 go

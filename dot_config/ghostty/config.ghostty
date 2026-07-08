@@ -1,0 +1,6 @@
+command = zsh -l -c "tmux new"
+confirm-close-surface = false
+font-size = 13
+theme = Catppuccin Mocha
+window-padding-x = 10
+window-padding-y = 10
