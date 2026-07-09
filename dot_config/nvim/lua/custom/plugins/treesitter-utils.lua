@@ -1,3 +1,0 @@
-return {
-  'nfrid/treesitter-utils',
-}
