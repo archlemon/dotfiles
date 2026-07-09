@@ -82,6 +82,7 @@ local terminal_kitty = "kitty"
 local terminal_ghostty = "ghostty"
 local active_terminal = terminal_ghostty
 local fileManager = "nautilus"
+local terminal_fileManager = "yazi"
 local menu = "wofi --conf ~/.config/wofi/config --style ~/.config/wofi/mocha.css"
 local menuSearch = "~/wofi-search.sh"
 local menu2 = "rofi -show drun"
@@ -225,8 +226,7 @@ local mainMod = "SUPER"
 -- Applications and Terminal Binds
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(run_in_term("tmux new")))
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd(sublimeText))
-hl.bind(mainMod .. " + ALT + Q", hl.dsp.exec_cmd(cursorApp))
-hl.bind(mainMod .. " + SHIFT + ALT + Q", hl.dsp.exec_cmd(active_terminal))
+hl.bind(mainMod .. " + ALT + Q", hl.dsp.exec_cmd(active_terminal))
 
 -- Window Management
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
@@ -238,7 +238,8 @@ hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen(0))
 hl.bind(mainMod .. " + ALT + P", hl.dsp.window.pseudo())
 
 -- File Management and Utilities
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(run_in_term("yazi")))
+hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(run_in_term("nn")))
 hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd(run_in_term("np")))
 hl.bind(mainMod .. " + U", hl.dsp.exec_cmd(spotify))
