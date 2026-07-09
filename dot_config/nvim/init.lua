@@ -231,6 +231,43 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function() vim.hl.on_yank() end,
 })
 
+-- Toggle markdown task checkboxes ([ ] <-> [x]), creating a checkbox on
+-- plain list items that don't have one yet.
+local function toggle_md_checkbox()
+  local line = vim.api.nvim_get_current_line()
+
+  if line:match '^%s*$' then
+    local indent = line:match '^(%s*)'
+    vim.api.nvim_set_current_line(indent .. '- [ ] ')
+    vim.api.nvim_win_set_cursor(0, { vim.api.nvim_win_get_cursor(0)[1], #indent + 6 })
+    return
+  end
+
+  local unchecked = line:match '^(%s*[-*+] )%[ %]'
+  local checked = line:match '^(%s*[-*+] )%[[xX]%]'
+  local bare_item = line:match '^(%s*[-*+] )()'
+
+  local new_line
+  if unchecked then
+    new_line = line:gsub('^(%s*[-*+] )%[ %]', '%1[x]', 1)
+  elseif checked then
+    new_line = line:gsub('^(%s*[-*+] )%[[xX]%]', '%1[ ]', 1)
+  elseif bare_item then
+    new_line = line:gsub('^(%s*[-*+] )', '%1[ ] ', 1)
+  else
+    return
+  end
+
+  vim.api.nvim_set_current_line(new_line)
+end
+
+vim.api.nvim_create_autocmd('FileType', {
+  desc = 'Keymap to toggle markdown task checkboxes',
+  group = vim.api.nvim_create_augroup('kickstart-markdown-checkbox', { clear = true }),
+  pattern = 'markdown',
+  callback = function(event) vim.keymap.set('n', '<leader>tt', toggle_md_checkbox, { buffer = event.buf, desc = '[T]oggle [T]ask' }) end,
+})
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -591,6 +628,7 @@ require('lazy').setup({
           --
           -- This may be unwanted, since they displace some of your code
           if client and client:supports_method('textDocument/inlayHint', event.buf) then
+            vim.lsp.inlay_hint.enable(true, { bufnr = event.buf })
             map('<leader>th', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf }) end, '[T]oggle Inlay [H]ints')
           end
         end,
@@ -654,20 +692,20 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         -- You can add other tools here that you want Mason to install
-        docker_compose_language_service = {},
-        dockerls = {},
-        emmet_ls = {},
-        gdtoolkit = {},
-        graphql = {},
-        html = {},
-        intelephense = {},
-        ts_ls = {},
-        gopls = {},
-        clangd = {},
-        pyright = {},
-        rust_analyzer = {},
-        yamlls = {},
-        postgres_lsp = {},
+        'docker_compose_language_service',
+        'dockerls',
+        'emmet_ls',
+        'graphql',
+        'html',
+        'intelephense',
+        'ts_ls',
+        'gopls',
+        'clangd',
+        'pyright',
+        'rust_analyzer',
+        'yamlls',
+        'postgres_lsp',
+        'zls',
       })
 
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -685,6 +723,9 @@ require('lazy').setup({
 
         vim.lsp.enable 'gdscript'
       end
+
+      -- Bridge Mason-installed servers with nvim-lspconfig (auto-configures all servers in ensure_installed)
+      require('mason-lspconfig').setup { ensure_installed = ensure_installed }
 
       for name, server in pairs(servers) do
         vim.lsp.config(name, server)
@@ -808,7 +849,15 @@ require('lazy').setup({
       },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets' },
+        default = { 'lsp', 'path', 'snippets', 'copilot' },
+        providers = {
+          copilot = {
+            name = 'copilot',
+            module = 'blink-copilot',
+            score_offset = 100,
+            async = true,
+          },
+        },
       },
 
       snippets = { preset = 'luasnip' },

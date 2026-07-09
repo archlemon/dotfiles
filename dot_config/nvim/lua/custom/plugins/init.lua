@@ -38,26 +38,7 @@ return {
 
   {
     'fang2hou/blink-copilot',
-    dependencies = { 'zbirenbaum/copilot.lua', 'saghen/blink.cmp' },
-    config = function()
-      require('blink.cmp').setup {
-        sources = {
-          default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
-          providers = {
-            copilot = {
-              async = true,
-              module = 'blink-copilot',
-              name = 'copilot',
-              score_offset = 100,
-              opts = {
-                max_completions = 3,
-                debounce = 750,
-              },
-            },
-          },
-        },
-      }
-    end,
+    dependencies = { 'zbirenbaum/copilot.lua' },
   },
 
   { 'rrethy/vim-illuminate' },
