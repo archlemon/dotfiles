@@ -58,6 +58,7 @@ pnpm
 polkit-gnome
 postgresql-libs
 prettierd
+python-curl_cffi
 python-huggingface-hub
 python-pipx
 qbittorrent
