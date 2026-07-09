@@ -2,5 +2,6 @@
 @fsouza/prettierd
 @musistudio/claude-code-router
 @openai/codex
+@openhands/agent-canvas
 intelephense
 repomix
