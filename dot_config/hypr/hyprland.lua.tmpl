@@ -93,6 +93,7 @@ local sublimeText = "subl"
 local cursorApp = "cursor --enable-features=UseOzonePlatform --ozone-platform=wayland"
 local slack = "flatpak run com.slack.Slack --enable-features=UseOzonePlatform --ozone-platform=wayland"
 local spotify = "flatpak run com.spotify.Client"
+local terminal_spotify = "spotify_player"
 
 -- Helper function to generate the full command
 local function run_in_term(cmd)
@@ -242,7 +243,8 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(run_in_term("yazi")))
 hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(run_in_term("nn")))
 hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd(run_in_term("np")))
-hl.bind(mainMod .. " + U", hl.dsp.exec_cmd(spotify))
+hl.bind(mainMod .. " + U", hl.dsp.exec_cmd(run_in_term("spotify_player")))
+hl.bind(mainMod .. " + SHIFT + U", hl.dsp.exec_cmd(spotify))
 
 -- Launchers and Menus
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
