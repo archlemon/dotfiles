@@ -73,6 +73,7 @@ speech-dispatcher
 spotify-player
 sublime-text-4
 sushi
+t3code-bin
 tmux
 toolbox
 tree
