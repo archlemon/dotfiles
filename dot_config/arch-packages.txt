@@ -83,6 +83,7 @@ vulkan-headers
 vulkan-radeon
 vulkan-tools
 waybar
+whois
 wlrobs
 wofi
 xdg-desktop-portal
