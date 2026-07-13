@@ -80,6 +80,9 @@
             }
          }
       },
+      "files": {
+         "enabled": false
+      },
       "power": {
          "entrypoints": {
             "hibernate": {
