@@ -22,6 +22,7 @@ dropbox
 easyeffects
 flatpak
 ghostty
+github-cli
 gnome-disk-utility
 gnome-themes-extra
 go
