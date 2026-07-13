@@ -4,4 +4,3 @@
 @openai/codex
 @openhands/agent-canvas
 intelephense
-repomix
