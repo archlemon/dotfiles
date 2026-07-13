@@ -23,6 +23,7 @@ easyeffects
 flatpak
 ghostty
 github-cli
+glow
 gnome-disk-utility
 gnome-themes-extra
 go
