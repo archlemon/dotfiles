@@ -85,8 +85,6 @@ local fileManager = "nautilus"
 local terminal_fileManager = "yazi"
 local wofi = "wofi --conf ~/.config/wofi/config --style ~/.config/wofi/mocha.css"
 local menuSearch = "~/wofi-search.sh"
-local rofi = "rofi -show drun"
-local vicinae = "vicinae open"
 local browser = "firefox"
 local vpn = "/opt/piavpn/bin/pia-client"
 local passwordManager = "1password"
@@ -136,7 +134,6 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
   hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
   hl.exec_cmd("[workspace 1 silent] " .. vpn)
-  hl.exec_cmd("vicinae server &")
   hl.exec_cmd("easyeffects --gapplication-service &")
 end)
 
@@ -250,8 +247,7 @@ hl.bind(mainMod .. " + U", hl.dsp.exec_cmd(run_in_term("spotify_player")))
 hl.bind(mainMod .. " + SHIFT + U", hl.dsp.exec_cmd(spotify))
 
 -- Launchers and Menus
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(vicinae))
-hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd(wofi))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(wofi))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menuSearch))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd(passwordManager))
 
