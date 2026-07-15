@@ -1,3 +1,0 @@
-prefix=~/.npm-global
-min-release-age=14
-ignore-scripts=true
