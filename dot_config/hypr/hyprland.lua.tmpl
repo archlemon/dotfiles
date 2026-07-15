@@ -138,6 +138,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("[workspace 1 silent] " .. vpn)
   hl.exec_cmd("easyeffects --gapplication-service &")
   hl.exec_cmd("nimbus --service")
+  hl.exec_cmd("home -headless -serve=:8123")
 end)
 
 -----------------
