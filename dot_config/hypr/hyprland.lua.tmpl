@@ -85,6 +85,8 @@ local fileManager = "nautilus"
 local terminal_fileManager = "yazi"
 local wofi = "wofi --conf ~/.config/wofi/config --style ~/.config/wofi/mocha.css"
 local menuSearch = "~/wofi-search.sh"
+local nimbus = "nimbus"
+local launcher = nimbus
 local browser = "firefox"
 local vpn = "/opt/piavpn/bin/pia-client"
 local passwordManager = "1password"
@@ -247,7 +249,8 @@ hl.bind(mainMod .. " + U", hl.dsp.exec_cmd(run_in_term("spotify_player")))
 hl.bind(mainMod .. " + SHIFT + U", hl.dsp.exec_cmd(spotify))
 
 -- Launchers and Menus
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(wofi))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(launcher))
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd(wofi))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menuSearch))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd(passwordManager))
 
