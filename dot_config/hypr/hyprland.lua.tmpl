@@ -42,12 +42,6 @@ hl.monitor({
     position = "0x0",
     scale    = scale,
 })
-hl.monitor({
-    output   = secondary,
-    mode     = "2560x1440@144.00",
-    position = "auto-center-up",
-    scale    = scale,
-})
 {{ end -}}
 
 -----------------
@@ -56,8 +50,8 @@ hl.monitor({
 
 config.workspace = {
 {{ if has .chezmoi.hostname (list "matt-b650iax" "framework") -}}
-    "1, monitor:" .. secondary .. ", default:true",
-    "2, monitor:" .. primary .. ", default:true",
+    "1, monitor:" .. primary .. ", default:true",
+    "2, monitor:" .. primary,
     "3, monitor:" .. primary,
     "4, monitor:" .. primary,
     "5, monitor:" .. primary,
