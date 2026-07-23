@@ -14,7 +14,6 @@ pgcli
 pipx
 pnpm
 prettierd
-repomix
 rustup
 tmux
 tree
