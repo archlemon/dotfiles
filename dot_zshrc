@@ -80,6 +80,9 @@ fpath=($HOME/.zsh/completions $fpath)
 autoload -U compinit
 compinit
 
+export EDITOR=nvim
+export VISUAL=nvim
+
 if [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
