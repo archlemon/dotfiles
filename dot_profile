@@ -10,6 +10,7 @@ alias update="yay -Syu --noconfirm && flatpak update -y && npm -g update && need
 alias hl=start-hyprland
 alias mbat='upower -i /org/freedesktop/UPower/devices/battery_hidpp_battery_1 | grep -E "state|percentage|battery-level"'
 alias cnt='cn --config ~/.continue/config.yaml'
+alias wbr='killall waybar; setsid -f waybar > /dev/null 2>&1'
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/home/matt/.lmstudio/bin"

@@ -15,6 +15,7 @@
     ],
     "modules-right": [
         "tray",
+        "custom/agents",
         "cpu",
         "memory",
         //"temperature",
@@ -216,4 +217,10 @@
         "on-click-right": "hyprshot -m region",
         "on-click-middle": "hyprshot -m window",
     },
+    "custom/agents": {
+        "exec": "agmon status --waybar",
+        "interval": 30,
+        "signal": 8,
+        "return-type": "json",
+    }
 }

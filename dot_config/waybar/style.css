@@ -51,7 +51,9 @@
 #custom-lock,
 #custom-power,
 #custom-mouse-accel,
-#custom-screenshot {
+#custom-screenshot,
+#custom-agents
+{
 	background-color: @surface0;
 	padding: 0.5rem 1rem;
 	border-radius: 1rem;
@@ -217,4 +219,20 @@ tooltip, .tooltip, menu {
 	background: black;
 	color: white;
 	border: 1px solid @surface0;
+}
+
+#custom-agents.blocked {
+	color: @red;
+}
+
+#custom-agents.working {
+	color: @yellow;
+}
+
+#custom-agents.idle {
+	color: @blue;
+}
+
+#custom-agents.done {
+	color: @green;
 }
