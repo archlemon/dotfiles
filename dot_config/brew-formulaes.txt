@@ -1,8 +1,10 @@
 btop
+charmbracelet/tap/crush
 claude-code-router
 composer
 cursor-cli
 dnsmasq
+droast
 ffmpeg
 fzf
 gemini-cli
