@@ -117,3 +117,6 @@ speak() {
         echo "Usage: echo 'text' | speak"
     fi
 }
+
+# strix
+export PATH=/home/matt/.strix/bin:$PATH
