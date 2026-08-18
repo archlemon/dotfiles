@@ -2,6 +2,7 @@ btop
 charmbracelet/tap/crush
 claude-code-router
 composer
+coreutils
 cursor-cli
 dnsmasq
 droast
