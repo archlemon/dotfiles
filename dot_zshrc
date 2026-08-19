@@ -118,5 +118,19 @@ speak() {
     fi
 }
 
+if droast_bin="$(whence -p droast)"; then
+    droast() {
+        "$droast_bin" "$@"
+    }
+else
+    droast() {
+        docker run --rm \
+          -v "$PWD:/workspace:ro" \
+          -w /workspace \
+          immanuwell/droast:1.6.0 \
+          "$@"
+    }
+fi
+
 # strix
 export PATH=/home/matt/.strix/bin:$PATH
