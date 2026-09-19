@@ -36,11 +36,6 @@ return {
     end,
   },
 
-  {
-    'fang2hou/blink-copilot',
-    dependencies = { 'zbirenbaum/copilot.lua' },
-  },
-
   { 'rrethy/vim-illuminate' },
 
   { 'akinsho/toggleterm.nvim', version = '*', config = true },
