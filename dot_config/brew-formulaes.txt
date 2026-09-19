@@ -9,6 +9,7 @@ droast
 ffmpeg
 fzf
 gemini-cli
+gh
 go
 neovim
 node
