@@ -42,6 +42,7 @@ hyprcap
 hyprpicker
 hyprshot
 hyprshutdown
+hyprwhspr
 jq
 kitty
 lf-git
