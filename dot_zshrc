@@ -132,5 +132,17 @@ else
     }
 fi
 
+ssh() {
+    if [ -n "$TMUX" ]; then
+      tmux select-pane -P 'bg=#382b3d'
+      command ssh "$@"
+      local rc=$?
+      tmux select-pane -P 'bg=default'
+      return $rc
+    else
+      command ssh "$@"
+    fi
+}
+
 # strix
 export PATH=/home/matt/.strix/bin:$PATH
