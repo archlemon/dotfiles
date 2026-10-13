@@ -131,6 +131,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("easyeffects --gapplication-service &")
   hl.exec_cmd("nimbus --service")
   hl.exec_cmd("home -headless -serve=:8123")
+  hl.exec_cmd("hyprwhspr")
 end)
 
 -----------------
@@ -312,6 +313,9 @@ hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = tr
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+
+-- hyprwhspr
+hl.bind(mainMod .. " + ALT + D", hl.dsp.exec_cmd("hyprwhspr record toggle"))
 
 -----------------
 -- RULES       --
