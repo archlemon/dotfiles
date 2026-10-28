@@ -237,7 +237,7 @@ hl.bind(mainMod .. " + ALT + P", hl.dsp.window.pseudo())
 
 -- File Management and Utilities
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(run_in_term("yazi")))
-hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd(fileManager .. " --new-window"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(run_in_term("nn")))
 hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd(run_in_term("np")))
 hl.bind(mainMod .. " + U", hl.dsp.exec_cmd(run_in_term("spotify_player")))
