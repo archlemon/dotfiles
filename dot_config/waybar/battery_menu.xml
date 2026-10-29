@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkMenu" id="menu">
+    <child>
+      <object class="GtkMenuItem" id="quiet">
+        <property name="label">Quiet</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="balanced">
+        <property name="label">Balanced</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="performance">
+        <property name="label">Performance</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparatorMenuItem" id="delimiter1"/>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="ac-profile">
+        <property name="label">AC profile</property>
+        <child type="submenu">
+          <object class="GtkMenu">
+            <child>
+              <object class="GtkMenuItem" id="ac-quiet">
+                <property name="label">Quiet</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="ac-balanced">
+                <property name="label">Balanced</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="ac-performance">
+                <property name="label">Performance</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="battery-profile">
+        <property name="label">Battery profile</property>
+        <child type="submenu">
+          <object class="GtkMenu">
+            <child>
+              <object class="GtkMenuItem" id="battery-quiet">
+                <property name="label">Quiet</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="battery-balanced">
+                <property name="label">Balanced</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="battery-performance">
+                <property name="label">Performance</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparatorMenuItem" id="delimiter2"/>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="limit">
+        <property name="label">Charge limit</property>
+        <child type="submenu">
+          <object class="GtkMenu">
+            <child>
+              <object class="GtkMenuItem" id="limit-60">
+                <property name="label">60%</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="limit-80">
+                <property name="label">80%</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="limit-100">
+                <property name="label">100%</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="oneshot">
+        <property name="label">Full charge once</property>
+      </object>
+    </child>
+  </object>
+</interface>

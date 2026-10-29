@@ -39,7 +39,7 @@
 #tray,
 #backlight,
 #clock,
-#battery,
+#custom-battery,
 #pulseaudio,
 #cpu,
 #memory,
@@ -64,34 +64,23 @@
 	color: @blue;
 }
 
-#backlight, #battery {
-	border-radius: 0;
-	padding: 0.5rem 0;
-}
-
 #backlight {
 	color: @yellow;
-	padding-left: 1rem;
-	border-radius: 1rem 0 0 1rem;
 }
 
-#battery {
-	color: @white;
-	margin-left: 0;
-	border-radius: 0 1rem 1rem 0;
-	padding-left: 0.75rem;
-	padding-right: 1rem;
-}
-
-#battery.discharging {
+#custom-battery {
 	color: @white;
 }
 
-#battery.charging, #battery.plugged, #battery.full {
+#custom-battery.discharging {
+	color: @white;
+}
+
+#custom-battery.charging, #custom-battery.plugged, #custom-battery.full {
 	color: @green;
 }
 
-#battery.warning:not(.charging) {
+#custom-battery.warning:not(.charging), #custom-battery.critical:not(.charging) {
 	color: @red;
 }
 
@@ -191,7 +180,7 @@
 }
 
 /* middle group */
-#custom-vpn, #memory, #custom-temp, #custom-mouse-accel {
+#custom-vpn, #memory, #custom-temp, #backlight, #custom-battery {
 	border-radius: 0;
 	margin-left: 0;
 	padding: 0.5rem 0.25rem;
@@ -208,7 +197,7 @@
 }
 
 /* end group */
-#network, #pulseaudio, #custom-power {
+#network, #pulseaudio, #custom-mouse-accel {
 	border-radius: 0 1rem 1rem 0;
 	margin-left: 0;
 	padding: 0.5rem 0.25rem;
