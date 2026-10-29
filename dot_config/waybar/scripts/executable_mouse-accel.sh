@@ -2,25 +2,17 @@
 
 set -euo pipefail
 
-HYPR_DEVICE="${HYPR_DEVICE:-}"
 WAYBAR_SIG="${WAYBAR_SIG:-10}"
 SHOW_NOTIFY="${SHOW_NOTIFY:-1}"
 
-if [[ -n "$HYPR_DEVICE" ]]; then
-  TARGET="device:${HYPR_DEVICE}:accel_profile"
-  scope="device"
-else
-  TARGET="input:accel_profile"
-  scope="global"
-fi
-
 get_profile() {
-  hyprctl -j getoption "$TARGET" 2>/dev/null | jq -r '.str // empty'
+  hyprctl -j getoption input:accel_profile 2>/dev/null \
+    | jq -r '.str // empty | if . == "" or . == "[[EMPTY]]" then "adaptive" else . end'
 }
 
 set_profile() {
   local profile="$1" # "flat" or "adaptive"
-  hyprctl keyword "$TARGET" "$profile" >/dev/null
+  hyprctl eval "hl.config({ input = { accel_profile = \"${profile}\" } })" >/dev/null
 }
 
 make_json() {
@@ -45,7 +37,7 @@ make_json() {
       ;;
   esac
 
-  tip="Mouse acceleration: ${status}\nProfile: ${profile:-unknown}\nScope: ${scope}"
+  tip="Mouse acceleration: ${status}\nProfile: ${profile:-unknown}"
 
   # with text
   # printf '{"text":"%s %s","tooltip":"%s","class":["mouse-accel","%s"]}\n' "$icon" "$status" "$tip" "$cls"
@@ -69,7 +61,7 @@ do_toggle() {
 
   if [[ "$SHOW_NOTIFY" == "1" ]]; then
     command -v notify-send >/dev/null 2>&1 && \
-      notify-send -t 1200 "Mouse acceleration" "Now: ${next} (${scope})"
+      notify-send -t 1200 "Mouse acceleration" "Now: ${next}"
   fi
 
   pkill -SIGRTMIN+"$WAYBAR_SIG" waybar 2>/dev/null || true
