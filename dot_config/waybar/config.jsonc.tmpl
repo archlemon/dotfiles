@@ -156,7 +156,8 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol",
-        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "~/.config/waybar/scripts/audio-output-menu.py",
     },
     "network#wifi": {
         "interface": "wl*",
