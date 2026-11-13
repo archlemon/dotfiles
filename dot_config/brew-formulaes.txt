@@ -21,6 +21,7 @@ prettierd
 rustup
 tmux
 tree
+typescript-language-server
 vim
 zsh
 zsh-autosuggestions

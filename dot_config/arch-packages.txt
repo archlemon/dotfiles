@@ -82,6 +82,7 @@ tmux
 toolbox
 tree
 tree-sitter-cli
+typescript-language-server
 v4l2loopback-dkms
 vim
 vulkan-headers
