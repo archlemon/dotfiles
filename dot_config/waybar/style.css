@@ -210,7 +210,7 @@ tooltip, .tooltip, menu {
 	border: 1px solid @surface0;
 }
 
-#custom-agents.blocked {
+#custom-agents.attention {
 	color: @red;
 }
 
@@ -220,8 +220,4 @@ tooltip, .tooltip, menu {
 
 #custom-agents.idle {
 	color: @blue;
-}
-
-#custom-agents.done {
-	color: @green;
 }
