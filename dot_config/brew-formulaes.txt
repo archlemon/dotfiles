@@ -1,4 +1,5 @@
 btop
+can1357/tap/omp
 charmbracelet/tap/crush
 claude-code-router
 composer

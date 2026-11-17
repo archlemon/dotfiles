@@ -54,6 +54,7 @@ neovim
 nerd-fonts
 nodejs
 nwg-look
+oh-my-pi-bin
 openbsd-netcat
 opencode-bin
 openssh
